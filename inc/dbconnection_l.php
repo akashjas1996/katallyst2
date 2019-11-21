@@ -13,10 +13,10 @@ function decryptIt_webs($q) {
     return( $qDecoded );
 }
 date_default_timezone_set("Asia/Calcutta");
-$host="localhost";
-$user="u718782272_kat";
-$pass="~C*NLM^V[Iy$JQ2~9a";
-$dbname="u718782272_katallyst";
+$host="127.0.0.1";
+$user="root";
+$pass="password";
+$dbname="katallyst";
 $link=@mysqli_connect($host,$user,$pass,$dbname);
     if(mysqli_connect_errno())
     {
