@@ -13,56 +13,17 @@
   </nav> -->
 
   <!--Navbar-->
-
-  <head>
-<style>
-    $shopping-cart-red: #DF0000;
-
-.fa-stack[data-count]:after{
-  position:absolute;
-  right:0%;
-  top:0%;
-  content: attr(data-count);
-  font-size:40%;
-  padding:.6em;
-  border-radius:999px;
-  line-height:.75em;
-  color: white;
-  color:$shopping-cart-red;
-  text-align:center;
-  min-width:2em;
-  font-weight:bold;
-  background: white;
-  border-style:solid;
-}
-.fa-circle {
-  color:#DF0000;
-}
-
-.red-cart {
-  color: #DF0000; background:white;
-}
-
-</style>
-  </head>
 <nav style="background-color: transparent !important;" class="navbar navbar-expand-lg navbar-dark primary-color">
 
   <!-- Navbar brand -->
   <div class="navbar-brand" href="#"><img src="../img/logo_2x.png" alt="logo"></div>
 
   <!-- Collapse button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
     aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="basicExampleNav">
-
-    <!-- Links -->
-    
-    <!-- Links -->
-
+ -->
    
   </div>
   <!-- Collapsible content -->
