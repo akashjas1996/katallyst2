@@ -35,8 +35,51 @@
 
   <br><br>
   <main>
+
     <?php 
-      $std_id = $_SESSION['userid'];
+     $std_id = $_SESSION['userid'];
+    $query_course_count = "SELECT * FROM tbl_enrollment WHERE stud_id='$std_id' AND payment_status=1";
+    $res_course_count = mysqli_query($link, $query_course_count);
+    $count = mysqli_num_rows($res_course_count);
+    if($count==0){
+
+      echo '    <div class="container my-5 py-5 z-depth-0">
+
+ 
+        <!--Section: Content-->
+        <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+    
+          <!--Grid row-->
+          <div class="row">
+    
+            <!--Grid column-->
+            
+            <!--Grid column-->
+
+           
+    
+            <!--Grid column-->
+            <div class="col-lg-12 mb-4 mb-lg-0 d-flex align-items-center justify-content-center">
+                <i style="opacity:50%" class="fas fa-pen fa-10x" aria-hidden="true"></i>
+            </div>
+
+             <div style="margin-left:20vw; margin-top:10%" class="row">
+              <h2 style="color:gray"> No completed course </h2>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+    
+    
+        </section>
+        <!--Section: Content-->
+    
+    
+      </div>
+';
+
+    }
+    else{
       $query_course = "SELECT * FROM tbl_enrollment WHERE stud_id='$std_id' AND payment_status=1";
       $res_course = mysqli_query($link, $query_course);
       while($row_course = mysqli_fetch_assoc($res_course)){
@@ -196,7 +239,7 @@ freegan cred raw denim single-origin coffee viral. -->
 
 
   </div>
-  <?php  } ?>
+  <?php  } }?>
 
 <br><br>
   <?php include '../inc/footer.php' ?>

@@ -66,7 +66,50 @@
     <!--Grid row-->
     <div class="row text-center">
 
-      <?php 
+      <?php
+
+      $query_feedback_count = "SELECT * FROM tbl_feedback WHERE course_id='$course_id' AND verified=1";
+      $res_feedback_count = mysqli_query($link, $query_feedback_count);
+      $count_feedback = mysqli_num_rows($res_feedback_count);
+      if($count_feedback==0){
+
+         echo '    <div class="container my-5 py-5 z-depth-0">
+
+ 
+        <!--Section: Content-->
+        <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+    
+          <!--Grid row-->
+          <div class="row">
+    
+            <!--Grid column-->
+            
+            <!--Grid column-->
+
+           
+    
+            <!--Grid column-->
+            <div class="col-lg-12 mb-4 mb-lg-0 d-flex align-items-center justify-content-center">
+                <i style="opacity:50%" class="fas fa-comment fa-10x" aria-hidden="true"></i>
+            </div>
+
+             <div style="margin-left:24vw; margin-top:10%" class="row">
+              <h2 style="color:gray"> No Reviews </h2>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+    
+    
+        </section>
+        <!--Section: Content-->
+    
+    
+      </div>
+';
+
+      }
+      else{
 
       $query_feedback = "SELECT * FROM tbl_feedback WHERE course_id='$course_id' AND verified=1";
       $res_feedback = mysqli_query($link, $query_feedback);
@@ -77,7 +120,7 @@
         $student_info = "SELECT * FROM student_info WHERE stud_id = '$stud_id'";
         $res_student_info = mysqli_query($link, $student_info);
         $row_student_info = mysqli_fetch_assoc($res_student_info);
-      ?>  
+      ?>
       <div class="col-md-4 mb-4">
 
         <div class="testimonial">
@@ -152,7 +195,7 @@
         </div>
 
       </div>
-    <?php } ?>
+    <?php  } } ?>
 
     </div>
     <!--Grid row-->

@@ -94,7 +94,89 @@ function redirect($url)
         <!--Grid column-->
         <div class="col-lg-8 mb-4 mb-lg-0">
 
+          
+
           <h3 class="font-weight-bold"><?php echo $row_course['course_name'] ?></h3>
+
+          <!-- FEEDBACK SECTION -->
+
+          <?php
+            $sum_feedback = 0;
+            $count_feedback = 0;
+            $query_feedback = "SELECT * FROM tbl_feedback WHERE course_id='$course_id'";
+            $res_feedback = mysqli_query($link, $query_feedback);
+            while($row_feedback = mysqli_fetch_assoc($res_feedback)){
+              $count_feedback = $count_feedback+1;
+              $sum_feedback = $row_feedback['rating']+$sum_feedback;
+            }
+            if($count_feedback==0){
+
+               echo '<div class="orange-text">
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+          </div>';
+            }
+
+            else{
+
+               $avg_feedback = ceil($sum_feedback/$count_feedback);
+           if($avg_feedback==5){
+              echo ' <div class="orange-text">
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+          </div>';
+            }
+            else if($avg_feedback==4){
+                echo '
+                <div class="orange-text">
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+             </i>
+          </div>
+                ';
+            }
+
+            else if($avg_feedback==3){
+                echo '
+                <div class="orange-text">
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+             </i>
+          </div>
+                ';
+            }
+
+            else if($avg_feedback==2){
+                echo '
+                <div class="orange-text">
+            <i class="fas fa-star"> </i>
+            <i class="fas fa-star"> </i>
+             </i>
+          </div>
+                ';
+            }
+
+            else if($avg_feedback==1){
+                echo '
+                <div class="orange-text">
+            <i class="fas fa-star"> </i>
+             </i>
+          </div>
+                ';
+            }
+          } 
+
+          ?>
+
+          <br>
           <i class="fa fa-money" aria-hidden="true"></i>
           <p style="display: inline-block" class="font-weight-bold">₹<?php echo $row_course['price'] ?></p>
          <!--  &nbsp;&nbsp;&nbsp;&nbsp;
