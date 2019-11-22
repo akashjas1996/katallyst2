@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php session_start(); 
+include 'inc/redirection.php';
+redirect('courses/');
+?>
 
 <!DOCTYPE html>
 <html lang="en">

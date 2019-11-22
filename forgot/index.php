@@ -12,6 +12,9 @@ function manipulate_title($str){
 
 }
 
+
+include '../inc/redirection.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +48,56 @@ function manipulate_title($str){
   <br><br>
   <main>
 
+
+    <div style="min-height: 70vh" class="container">
+      <div class="row">
+      <div class="col-lg-4">
+      </div>
+      <div class="col-lg-4">
+
+          <!-- Material form login -->
+<div class="card">
+
+  <h5 class="card-header danger-color white-text text-center py-4">
+    <strong>Forgot Password</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+     <form method="POST" class="text-center" style="color: #757575;" action="verify.php">
+      <br>
+
+       <div class="md-form">
+       <p> Enter your registered Email id. </p>
+      </div>
+
+      <!-- OTP -->
+      <div class="md-form">
+        <input name="email" type="email" id="materialLoginFormPassword" class="form-control">
+        <label for="materialLoginFormPassword">Email</label>
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <div>
+        </div>
+      </div>
+
+      <!-- Sign in button -->
+      <button name="verify_pressed" class="btn btn-outline-danger btn-rounded btn-block my-4 waves-effect z-depth-1" type="submit">Verify</button>
+    </form>
+
+  </div>
+
+</div>
+<!-- Material form login -->
+
+
+      </div>
+    </div>
+    </div>
+
   <?php include '../inc/footer.php' ?>
+
   </main>
 
   
@@ -61,11 +113,7 @@ function manipulate_title($str){
   <script type="text/javascript" src="../js/mdb.min.js"></script>
 
   <script src="js/addons/rating.js"></script>
-  <script>
-    // Rating Initialization
-    $(document).ready(function () {
-      $('#rateMe4').mdbRate();
-    });
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
   </script>
 </body>
 

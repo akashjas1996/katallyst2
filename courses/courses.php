@@ -56,7 +56,7 @@
 
               <form action="" method="POST" style="display: inline">
                 <input type="hidden" name="course_id" value=<?php echo $row_course['course_id'] ?> >
-              <input name="buy" type="submit" value="ENROLL" class="btn btn-primary"></a>
+              <input name="buy" type="submit" value="ENROLL" class="btn btn-danger"></a>
             </form>
             </div>
           </div>

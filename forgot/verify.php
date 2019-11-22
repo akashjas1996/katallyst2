@@ -13,8 +13,35 @@ function manipulate_title($str){
 }
 
 
+function manipulate_mobile($str){
+  $str = substr($str, 7,10);
+  $str = 'xxxxxxx'.$str;
+  return($str);
+}
+
 include '../inc/redirection.php';
 
+
+
+    if(isset($_POST['verify_pressed'])){
+      $email =  $_POST['email'];
+      $login_query = "SELECT * FROM student_info WHERE stud_email='$email'";
+      $res_query = mysqli_query($link, $login_query);
+      $row_query = mysqli_fetch_assoc($res_query);
+      $mobile = $row_query['mobile'];
+      // if(mysqli_num_rows($res_query)==1){
+      //   echo "Login Success";
+      //   $_SESSION['userid'] = $row_query['stud_id'];
+      //   $_SESSION['name'] = $row_query['stud_name'] ;
+      //   redirect('../student/');
+      // }
+      // else{
+      //   echo '<script type="text/javascript">';
+      // echo 'setTimeout(function () { swal("Invalid Credentials!","Check username and password","warning");';
+      // echo '}, 1000);
+      // </script>';
+      // }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,68 +86,46 @@ include '../inc/redirection.php';
 <div class="card">
 
   <?php 
-    if(isset($_POST['sign_in_pressed'])){
-      $email =  $_POST['email'];
-      $password = $_POST['password'];
-      $password = md5($password);
-      $login_query = "SELECT * FROM student_info WHERE stud_email='$email' AND password='$password'";
-      $res_query = mysqli_query($link, $login_query);
-      $row_query = mysqli_fetch_assoc($res_query);
-      if(mysqli_num_rows($res_query)==1){
-        echo "Login Success";
-        $_SESSION['userid'] = $row_query['stud_id'];
-        $_SESSION['name'] = $row_query['stud_name'] ;
-        redirect('../student/');
-      }
-      else{
-        echo '<script type="text/javascript">';
-      echo 'setTimeout(function () { swal("Invalid Credentials!","Check username and password","warning");';
-      echo '}, 1000);
-      </script>';
-      }
-
+    if(isset($_POST['otp_pressed'])){
+      $otp =  $_POST['otp'];
+      echo $otp;
+      // $login_query = "SELECT * FROM student_info WHERE stud_email='$email' AND password='$password'";
+      // $res_query = mysqli_query($link, $login_query);
+      // $row_query = mysqli_fetch_assoc($res_query);
     }
    ?>
 
   <h5 class="card-header danger-color white-text text-center py-4">
-    <strong>Sign in</strong>
+    <strong>Forgot Password</strong>
   </h5>
 
   <!--Card content-->
   <div class="card-body px-lg-5 pt-0">
 
+
+
     <!-- Form -->
-    <form method="POST" class="text-center" style="color: #757575;" action="">
+    <form id="after_otp" method="POST" class="text-center" style="color: #757575;" action="">
 
       <br>
-      <!-- Email -->
-      <div class="md-form">
-        <input name="email" type="email" id="materialLoginFormEmail" class="form-control">
-        <label for="materialLoginFormEmail">E-mail</label>
+
+       <div class="md-form">
+       <p> OTP has been sent to your registered number. <?php echo manipulate_mobile($mobile) ?> </p>
       </div>
 
-      <!-- Password -->
+      <!-- OTP -->
       <div class="md-form">
-        <input name="password" type="password" id="materialLoginFormPassword" class="form-control">
-        <label for="materialLoginFormPassword">Password</label>
+        <input name="otp" type="text" id="materialLoginFormPassword" class="form-control">
+        <label for="materialLoginFormPassword">OTP</label>
       </div>
 
       <div class="d-flex justify-content-around">
         <div>
-          <!-- Remember me -->
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
-            <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
-          </div>
-        </div>
-        <div>
-          <!-- Forgot password -->
-          <a href="../forgot/">Forgot password?</a>
         </div>
       </div>
 
       <!-- Sign in button -->
-      <button name="sign_in_pressed" class="btn btn-outline-danger btn-rounded btn-block my-4 waves-effect z-depth-1" type="submit">Sign in</button>
+      <button name="otp_pressed" class="btn btn-outline-danger btn-rounded btn-block my-4 waves-effect z-depth-1" type="submit">Verify</button>
     </form>
     <!-- Form -->
 

@@ -1,6 +1,8 @@
 <?php session_start(); ?>
 <?php include '../inc/dbconnection.php';
 
+include '../inc/logincheck.php';
+
 function manipulate_title($str){
   $count = strlen($str);
   if($count>24){
@@ -10,24 +12,6 @@ function manipulate_title($str){
 
   return($str);
 
-}
-
-function redirect($url)
-{
-    if (!headers_sent())
-    {    
-        header('Location: '.$url);
-        exit;
-        }
-    else
-        {  
-        echo '<script type="text/javascript">';
-        echo 'window.location.href="'.$url.'";';
-        echo '</script>';
-        echo '<noscript>';
-        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-        echo '</noscript>'; exit;
-    }
 }
 
 

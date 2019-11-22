@@ -45,7 +45,7 @@ include '../inc/redirection.php';
 
   </header>
 
-  <br><br>
+  <br>
   <main>
 
 
@@ -110,7 +110,7 @@ include '../inc/redirection.php';
    ?>
 
   <h5 class="card-header danger-color white-text text-center py-4">
-    <strong>Sign in</strong>
+    <strong>Registration</strong>
   </h5>
 
   <!--Card content-->
@@ -151,15 +151,6 @@ include '../inc/redirection.php';
 
       <div class="d-flex justify-content-around">
         <div>
-          <!-- Remember me -->
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
-            <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
-          </div>
-        </div>
-        <div>
-          <!-- Forgot password -->
-          <a href="">Forgot password?</a>
         </div>
       </div>
 
@@ -175,13 +166,9 @@ include '../inc/redirection.php';
       </div>
     </div>
     </div>
-
+<br><br>
   <?php include '../inc/footer.php' ?>
   </main>
-
-  
-
-  <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
