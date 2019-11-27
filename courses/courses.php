@@ -38,7 +38,7 @@
           <div class="card">
             <!-- Card image -->
             <div class="view overlay">
-              <img class="card-img-top" src="https://katallyst.com/katallyst_admin/<?php echo $row_course['course_image'] ?>"
+              <img class="card-img-top" src="<?php echo $row_course['course_image'] ?>"
                 alt="Card image cap">
               <a href="#!">
                 <div class="mask rgba-white-slight"></div>

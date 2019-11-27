@@ -87,7 +87,7 @@ function redirect($url)
         <!--Grid column-->
         <div class="col-lg-4 mb-4 mb-lg-0 d-flex align-items-center justify-content-center">
 
-          <img src="https://katallyst.com/katallyst_admin/<?php echo $row_course['course_image'] ?>" class="img-fluid" alt="<?php echo $row_course['course_name'] ?>">
+          <img src="../courses/<?php echo $row_course['course_image'] ?>" class="img-fluid" alt="<?php echo $row_course['course_name'] ?>">
         </div>
         <!--Grid column-->
 
@@ -108,9 +108,10 @@ function redirect($url)
             while($row_feedback = mysqli_fetch_assoc($res_feedback)){
               $count_feedback = $count_feedback+1;
               $sum_feedback = $row_feedback['rating']+$sum_feedback;
+              echo '<a href="../review/?course='.$course_id.'">';
             }
             if($count_feedback==0){
-
+              echo '<a href="../review/?course='.$course_id.'">';
                echo '<div class="orange-text">
             <i class="fas fa-star"> </i>
             <i class="fas fa-star"> </i>
@@ -172,6 +173,7 @@ function redirect($url)
           </div>
                 ';
             }
+            echo '</a>';
           } 
 
           ?>

@@ -108,7 +108,7 @@
             $file_name = $row_course_image['course_image'];
             // echo $file_name;
             ?>
-            <img src="https://katallyst.com/katallyst_admin/<?php echo $file_name ?>" class="img-fluid" alt="">
+            <img src="../courses/<?php echo $file_name ?>" class="img-fluid" alt="">
           </div>
         </center>
 

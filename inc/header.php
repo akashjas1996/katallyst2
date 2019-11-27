@@ -85,8 +85,8 @@
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light">
-          <i class="fab fa-twitter"></i>
+        <a href="https://www.facebook.com/katallyst/" class="nav-link waves-effect waves-light">
+          <i class="fab fa-facebook"></i>
         </a>
       </li>
       <li class="nav-item">
@@ -101,8 +101,6 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-default"
           aria-labelledby="navbarDropdownMenuLink-333">
-
-
           <?php if(isset($_SESSION['userid'])) 
             echo '<a style="font-weight:bold" class="dropdown-item" href="../student">'.$_SESSION["name"].'</a>';
             echo '<a class="dropdown-item" href="../dashboard">LOGOUT</a>';

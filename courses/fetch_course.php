@@ -58,7 +58,7 @@ if(mysqli_num_rows($result) > 0)
           <div class="card">
             <!-- Card image -->
             <div class="view overlay">
-              <img class="card-img-top" src="https://katallyst.com/katallyst_admin/'.$row_course["course_image"].'"
+              <img class="card-img-top" src="'.$row_course["course_image"].'"
                 alt="Card image cap">
               <a href="#!">
                 <div class="mask rgba-white-slight"></div>

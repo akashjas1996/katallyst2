@@ -1,6 +1,12 @@
 <?php session_start(); 
 include 'inc/redirection.php';
-redirect('courses/');
+include 'inc/dbconnection.php';
+
+function manipulate($str){
+  $str = substr($str, 0,80);
+  $str=$str.'...';
+  return($str);
+}
 ?>
 
 <!DOCTYPE html>
@@ -58,114 +64,27 @@ redirect('courses/');
 
 <body>
 
-  <header>
 
 
     <!-- Navbar -->
 
-    <?php include 'inc/header.php' ?>
+   
 
-    <!--Carousel Wrapper-->
-    
-        <!--/First slide-->
-
-        <!--Second slide-->
-        <div class="carousel-item">
-          <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-            <!-- Mask & flexbox options-->
-            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-
-              <!-- Content -->
-              <div class="text-center white-text mx-5 wow fadeIn">
-                <h1 class="mb-4">
-                  <strong>Learn Bootstrap 4 with MDB</strong>
-                </h1>
-
-                <p>
-                  <strong>Best & free guide of responsive web design</strong>
-                </p>
-
-                <p class="mb-4 d-none d-md-block">
-                  <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and
-                    written versions
-                    available. Create your own, stunning website.</strong>
-                </p>
-
-                <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start
-                  free tutorial
-                  <i class="fas fa-graduation-cap ml-2"></i>
-                </a>
-              </div>
-              <!-- Content -->
-
-            </div>
-            <!-- Mask & flexbox options-->
-
-          </div>
-        </div>
-        <!--/Second slide-->
-
-        <!--Third slide-->
-        <div class="carousel-item">
-          <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/47.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-            <!-- Mask & flexbox options-->
-            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-
-              <!-- Content -->
-              <div class="text-center white-text mx-5 wow fadeIn">
-                <h1 class="mb-4">
-                  <strong>Learn Bootstrap 4 with MDB</strong>
-                </h1>
-
-                <p>
-                  <strong>Best & free guide of responsive web design</strong>
-                </p>
-
-                <p class="mb-4 d-none d-md-block">
-                  <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and
-                    written versions
-                    available. Create your own, stunning website.</strong>
-                </p>
-
-                <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start
-                  free tutorial
-                  <i class="fas fa-graduation-cap ml-2"></i>
-                </a>
-              </div>
-              <!-- Content -->
-
-            </div>
-            <!-- Mask & flexbox options-->
-
-          </div>
-        </div>
-        <!--/Third slide-->
-
-      </div>
-      <!--/.Slides-->
-
-      <!--Controls-->
-      <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-      <!--/.Controls-->
-
-    </div>
-    <!--/.Carousel Wrapper-->
-
-  </header>
 
   <!--Main layout-->
   <main>
-    <div class="container">
+     <?php include 'inc/header.php' ?>
 
+    <div style="margin:0px; padding: 0px" class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <img src="">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
       <!--Section: Main info-->
       <section class="mt-5 wow fadeIn">
 
@@ -223,7 +142,7 @@ redirect('courses/');
       <!--Section: Main features & Quick Start-->
       <section>
 
-        <h3 class="h3 text-center mb-5">About MDB</h3>
+        <h3 class="h3 text-center mb-5">About Katallyst</h3>
 
         <!--Grid row-->
         <div class="row wow fadeIn">
@@ -237,8 +156,8 @@ redirect('courses/');
                 <i class="fas fa-code fa-2x indigo-text"></i>
               </div>
               <div class="col-10">
-                <h5 class="feature-title">Bootstrap 4</h5>
-                <p class="grey-text">Thanks to MDB you can take advantage of all feature of newest Bootstrap 4.</p>
+                <h5 class="feature-title">Industry Ready</h5>
+                <p class="grey-text">Learn courses that are in high demand in the industries.</p>
               </div>
             </div>
             <!--/First row-->
@@ -251,10 +170,8 @@ redirect('courses/');
                 <i class="fas fa-book fa-2x blue-text"></i>
               </div>
               <div class="col-10">
-                <h5 class="feature-title">Detailed documentation</h5>
-                <p class="grey-text">We give you detailed user-friendly documentation at your disposal. It will help
-                  you to implement your ideas
-                  easily.
+                <h5 class="feature-title"></h5>
+                <p class="grey-text">You get the best course contents ever. 
                 </p>
               </div>
             </div>
@@ -268,10 +185,8 @@ redirect('courses/');
                 <i class="fas fa-graduation-cap fa-2x cyan-text"></i>
               </div>
               <div class="col-10">
-                <h5 class="feature-title">Lots of tutorials</h5>
-                <p class="grey-text">We care about the development of our users. We have prepared numerous tutorials,
-                  which allow you to learn
-                  how to use MDB as well as other technologies.</p>
+                <h5 class="feature-title">Best learning partners</h5>
+                <p class="grey-text">We take the pain to choose the best learning partner, so you get the best.</p>
               </div>
             </div>
             <!--/Third row-->
@@ -430,173 +345,37 @@ redirect('courses/');
                 <div style="height:15px"></div>
               </div>
             </div>
-            <!--/Fourth row-->
           </div>
-          <!--/Third column-->
-
         </div>
-        <!--/First row-->
-
       </section>
-      <!--Section: Not enough-->
-
       <hr class="mb-5">
-
-      <!--Section: More-->
       <section>
-
         <h2 class="my-5 h3 text-center">...and even more</h2>
-
-        <!--First row-->
         <div class="row features-small mt-5 wow fadeIn">
-
-          <!--Grid column-->
+          <?php
+          $query_courses = "SELECT * FROM course_learning_details ORDER BY rand() LIMIT 8";
+          $res_courses = mysqli_query($link, $query_courses);
+          while($row_course = mysqli_fetch_assoc($res_courses)){
+           ?>
+         
           <div class="col-xl-3 col-lg-6">
-            <!--Grid row-->
             <div class="row">
               <div class="col-2">
-                <i class="fab fa-firefox fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                <img width="100%" src="courses/<?php echo $row_course['course_image'] ?>">
               </div>
               <div class="col-10 mb-2 pl-3">
-                <h5 class="feature-title font-bold mb-1">Cross-browser compatibility</h5>
-                <p class="grey-text mt-2">Chrome, Firefox, IE, Safari, Opera, Microsoft Edge - MDB loves all browsers;
-                  all browsers love MDB.
+                  <a style="display: inline-block;" href="info?crs=<?php echo $row_course['course_id'] ?>">
+                <h5 class="feature-title font-bold mb-1"><?php echo $row_course['course_name'] ?></h5>
+                 </a>
+                <p class="grey-text mt-2"><?php echo manipulate($row_course['description']) ?>
                 </p>
               </div>
             </div>
-            <!--/Grid row-->
           </div>
-          <!--/Grid column-->
-
-          <!--Grid column-->
-          <div class="col-xl-3 col-lg-6">
-            <!--Grid row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-level-up-alt fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-              </div>
-              <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Frequent updates</h5>
-                <p class="grey-text mt-2">MDB becomes better every month. We love the project and enhance as much as
-                  possible.
-                </p>
-              </div>
-            </div>
-            <!--/Grid row-->
-          </div>
-          <!--/Grid column-->
-
-          <!--Grid column-->
-          <div class="col-xl-3 col-lg-6">
-            <!--Grid row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-comments fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-              </div>
-              <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Active community</h5>
-                <p class="grey-text mt-2">Our society grows day by day. Visit our forum and check how it is to be a
-                  part of our family.
-                </p>
-              </div>
-            </div>
-            <!--/Grid row-->
-          </div>
-          <!--/Grid column-->
-
-          <!--Grid column-->
-          <div class="col-xl-3 col-lg-6">
-            <!--Grid row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-              </div>
-              <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">jQuery 3.x</h5>
-                <p class="grey-text mt-2">MDB is integrated with newest jQuery. Therefore you can use all the latest
-                  features which come along with
-                  it.
-                </p>
-              </div>
-            </div>
-            <!--/Grid row-->
-          </div>
-          <!--/Grid column-->
-
+       
+          <?php } ?>
         </div>
-        <!--/First row-->
-
-        <!--Second row-->
         <div class="row features-small mt-4 wow fadeIn">
-
-          <!--Grid column-->
-          <div class="col-xl-3 col-lg-6">
-            <!--Grid row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-cubes fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-              </div>
-              <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Modularity</h5>
-                <p class="grey-text mt-2">Material Design for Bootstrap comes with both, compiled, ready to use
-                  libraries including all features as
-                  well as modules for CSS (SASS files) and JS.</p>
-              </div>
-            </div>
-            <!--/Grid row-->
-          </div>
-          <!--/Grid column-->
-
-          <!--Grid column-->
-          <div class="col-xl-3 col-lg-6">
-            <!--Grid row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-question fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-              </div>
-              <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Technical support</h5>
-                <p class="grey-text mt-2">We care about reliability. If you have any questions - do not hesitate to
-                  contact us.
-                </p>
-              </div>
-            </div>
-            <!--/Grid row-->
-          </div>
-          <!--/Grid column-->
-
-          <!--Grid column-->
-          <div class="col-xl-3 col-lg-6">
-            <!--Grid row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="fas fa-th fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-              </div>
-              <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">Flexbox</h5>
-                <p class="grey-text mt-2">MDB fully supports Flex Box. You can forget about alignment issues.</p>
-              </div>
-            </div>
-            <!--/Grid row-->
-          </div>
-          <!--/Grid column-->
-
-          <!--Grid column-->
-          <div class="col-xl-3 col-lg-6">
-            <!--Grid row-->
-            <div class="row">
-              <div class="col-2">
-                <i class="far fa-file-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-              </div>
-              <div class="col-10 mb-2">
-                <h5 class="feature-title font-bold mb-1">SASS files</h5>
-                <p class="grey-text mt-2">Arranged and well documented .scss files can't wait until you compile them.</p>
-              </div>
-            </div>
-            <!--/Grid row-->
-          </div>
-          <!--/Grid column-->
-
         </div>
         <!--/Second row-->
 
