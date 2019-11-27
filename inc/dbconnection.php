@@ -13,14 +13,14 @@ function decryptIt_webs($q) {
     return( $qDecoded );
 }
 date_default_timezone_set("Asia/Calcutta");
-$host="127.0.0.1";
-$user="root";
-$pass="password";
-$dbname="katallyst";
+$host="localhost";
+$user="u718782272_kat";
+$pass="i0iw5/iD|QcK";
+$dbname="u718782272_katallyst";
 $link=@mysqli_connect($host,$user,$pass,$dbname);
     if(mysqli_connect_errno())
     {
-        echo"Failed to Connect!!";
+        echo"Failed to Connect!!!!";
         exit();
     }
     else
