@@ -104,26 +104,26 @@ function manipulate($str){
           <div class="col-md-6 mb-4">
 
             <!-- Main heading -->
-            <h3 class="h3 mb-3">Material Design for Bootstrap</h3>
-            <p>This template is created with Material Design for Bootstrap (
-              <strong>MDB</strong> ) framework.</p>
-            <p>Read details below to learn more about MDB.</p>
+            <h3 class="h3 mb-3">About Katallyst</h3>
+            <p>Write something about katallys (
+              <strong>Constrontium Pvt. Ltd.</strong> )</p>
+            <p>How it helps students industry ready.</p>
             <!-- Main heading -->
 
             <hr>
 
             <p>
-              <strong>400+</strong> material UI elements,
-              <strong>600+</strong> material icons,
-              <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
-              <strong>Free for personal and commercial use.</strong>
+              <strong>400+</strong> courses,
+              <strong>1200+</strong> Students
+              <strong>74</strong> Learning partners from all over india.
+              <!-- <strong>Free for personal and commercial use.</strong> -->
             </p>
 
             <!-- CTA -->
-            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-grey btn-md">Download
+            <a target="_blank" href="#" class="btn btn-grey btn-md">Download
               <i class="fas fa-download ml-1"></i>
             </a>
-            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-grey btn-md">Live
+            <a target="_blank" href="#" class="btn btn-grey btn-md">Live
               demo
               <i class="far fa-image ml-1"></i>
             </a>
