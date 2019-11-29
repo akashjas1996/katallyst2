@@ -20,27 +20,60 @@ function manipulate_mobile($str){
 }
 
 include '../inc/redirection.php';
-
+$mobile=0;
 
 
     if(isset($_POST['verify_pressed'])){
+      echo "Loading... Please wait.";
       $email =  $_POST['email'];
+      if(isset($_SESSION['forget_uid'])){
+        $email = $_SESSION['forget_uid'];
+      }
+      else{
+        $_SESSION['forget_uid'] = $email;
+      }
       $login_query = "SELECT * FROM student_info WHERE stud_email='$email'";
       $res_query = mysqli_query($link, $login_query);
       $row_query = mysqli_fetch_assoc($res_query);
       $mobile = $row_query['mobile'];
-      // if(mysqli_num_rows($res_query)==1){
-      //   echo "Login Success";
-      //   $_SESSION['userid'] = $row_query['stud_id'];
-      //   $_SESSION['name'] = $row_query['stud_name'] ;
-      //   redirect('../student/');
-      // }
-      // else{
-      //   echo '<script type="text/javascript">';
-      // echo 'setTimeout(function () { swal("Invalid Credentials!","Check username and password","warning");';
-      // echo '}, 1000);
-      // </script>';
-      // }
+
+              $fourdigitrandom = rand(1000,9999); 
+              $query_to_db = "UPDATE student_info SET mob_otp='$fourdigitrandom' WHERE stud_email='$email'";
+              $res_to_db = mysqli_query($link, $query_to_db);
+
+
+
+
+
+  $kid = $email;
+  $otp =  $fourdigitrandom;
+  $mbl = $mobile;
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://control.msg91.com/api/sendotp.php?template=hello&otp=".$otp."&otp_length=4&otp_expiry=10&sender=KIITFST&message=".$otp." is the mobile Verification code for KIITFEST 6.0. &mobile=".$mbl."&authkey=302677A7wYMfP8z5dc3ffa5",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => "",
+  CURLOPT_SSL_VERIFYHOST => 0,
+  CURLOPT_SSL_VERIFYPEER => 0,
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  //echo $response;
+}
     }
 ?>
 <!DOCTYPE html>
@@ -74,8 +107,6 @@ include '../inc/redirection.php';
 
   <br><br>
   <main>
-
-
     <div style="min-height: 70vh" class="container">
       <div class="row">
       <div class="col-lg-4">
@@ -88,7 +119,55 @@ include '../inc/redirection.php';
   <?php 
     if(isset($_POST['otp_pressed'])){
       $otp =  $_POST['otp'];
-      echo $otp;
+      // echo $otp;
+      $pass2 = $_POST['pass2'];
+      $pass3 = $_POST['pass3'];
+      if($pass2!=$pass3){
+         echo '<script type="text/javascript">';
+      echo 'setTimeout(function () { swal("Different Password!","Password and Confirm Password are not same.","warning");';
+      echo '}, 1000);
+      </script>';
+
+      echo '<script>window.setTimeout(function(){
+
+        window.location.assign("../forgot/");
+
+    }, 5000)</script>';
+      }
+      else{
+        $email = $_SESSION['forget_uid'];
+        $query_get_otp = "SELECT * FROM student_info WHERE stud_email='$email'";
+        $res_get_otp = mysqli_query($link, $query_get_otp);
+        $row_get_otp = mysqli_fetch_assoc($res_get_otp);
+
+        if($row_get_otp['mob_otp'] == $otp){
+          $pass2 = md5($pass2);
+          $query_update_pass = "UPDATE student_info SET password='$pass2'";
+          $res_update_pass = mysqli_query($link, $query_update_pass);
+           echo '<script type="text/javascript">';
+      echo 'setTimeout(function () { swal("Password saved!","Password changed successfully, Please Login.","success");';
+      echo '}, 1000);
+      </script>';
+
+      echo '<script>window.setTimeout(function(){
+
+        window.location.assign("../logout/tologin.php");
+
+    }, 5000)</script>';
+        }
+        else{
+               echo '<script type="text/javascript">';
+      echo 'setTimeout(function () { swal("Verification failed!","Please try again.","warning");';
+      echo '}, 1000);
+      </script>';
+
+      echo '<script>window.setTimeout(function(){
+
+        window.location.assign("../forgot/");
+
+    }, 5000)</script>';
+        }
+      }
       // $login_query = "SELECT * FROM student_info WHERE stud_email='$email' AND password='$password'";
       // $res_query = mysqli_query($link, $login_query);
       // $row_query = mysqli_fetch_assoc($res_query);
@@ -96,7 +175,7 @@ include '../inc/redirection.php';
    ?>
 
   <h5 class="card-header danger-color white-text text-center py-4">
-    <strong>Forgot Password</strong>
+    <strong>Verify Mobile</strong>
   </h5>
 
   <!--Card content-->
@@ -119,6 +198,16 @@ include '../inc/redirection.php';
         <label for="materialLoginFormPassword">OTP</label>
       </div>
 
+       <div class="md-form">
+        <input name="pass2" type="password" id="materialLoginFormPassword" class="form-control">
+        <label for="materialLoginFormPassword">Create Password</label>
+      </div>
+
+       <div class="md-form">
+        <input name="pass3" type="password" id="materialLoginFormPassword" class="form-control">
+        <label for="materialLoginFormPassword">Confirm Password</label>
+      </div>
+
       <div class="d-flex justify-content-around">
         <div>
         </div>
@@ -133,8 +222,6 @@ include '../inc/redirection.php';
 
 </div>
 <!-- Material form login -->
-
-
       </div>
     </div>
     </div>
