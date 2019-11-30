@@ -11,7 +11,7 @@
         type="submit">Search</button>
     </form>
   </nav> -->
-
+<head> <link rel="icon" href="../img/favicon.png"> </head>
   <!--Navbar-->
 <nav style="background-color: transparent !important;" class="navbar navbar-expand-lg navbar-dark primary-color">
 
@@ -85,7 +85,7 @@
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <li class="nav-item">
-        <a href="https://www.facebook.com/katallyst/" class="nav-link waves-effect waves-light">
+        <a target="_blank" href="https://www.facebook.com/katallyst/" class="nav-link waves-effect waves-light">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
