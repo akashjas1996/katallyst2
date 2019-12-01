@@ -140,7 +140,7 @@ else{
           <h3 class="font-weight-bold"><?php echo $row_en['course_name'] ?></h3>
 
            <i class="fa fa-money" aria-hidden="true"></i> &nbsp;
-          <p style="display: inline-block" class="font-weight-bold">₹<?php echo $row_en['fee'] ?></p>
+          <p style="display: inline-block" class="font-weight-bold">₹<?php $total_amt=$row_en['fee']; echo $total_amt; ?></p>
 
           <p class="text-muted"><?php echo $row_course_image['description'] ?></p>
          
@@ -154,7 +154,36 @@ else{
 
            <div id="payment_hidden_buttons<?php echo $row_en['enroll_id'] ?>" style="display: inline-block; display: none">
             <button type="button" class="btn btn-outline-primary waves-effect">OFFLINE</button>
-            <button type="button" class="btn btn-outline-default waves-effect">ONLINE</button>
+            
+
+              <?php
+                     $security_id = "katallyst";
+                     $checksum_key = "4Q2OjZBPf6d6";
+                     $merchant_id = "KATALLYST";
+                     $customer_id = $row_en['enroll_id'];
+                     $amount = $total_amt;
+                     $return_url = 'https://katallyst.com/payment/status.php';
+                     $str = $merchant_id.'|'.$customer_id.'|NA|'.$amount.'|NA|NA|NA|INR|NA|R|'.$security_id.'|NA|NA|F|NA|NA|NA|NA|NA|NA|NA|'.$return_url;
+                     $checksumlower = hash_hmac("sha256", $str, $checksum_key, false);
+                     $checksum = strtoupper($checksumlower);
+                     $newmsg = $str.'|'.$checksum;
+
+                  ?>
+
+
+
+                  <form style="display: inline; width: 100%" action="https://pgi.billdesk.com/pgidsk/PGIMerchantPayment" id="billdesk_payment" method="POST">
+                    <input type="hidden" name="msg" value="<?php echo $newmsg; ?>">
+                    <button type="submit" class="btn btn-outline-default waves-effect">ONLINE</button>
+                  </form>
+
+
+
+            
+          
+
+
+
           </div>
 
         </div>

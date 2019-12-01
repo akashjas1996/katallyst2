@@ -41,68 +41,122 @@
       <main>
          <div class="container">
             <div class="row">
-               <div class="col-lg-4">
-                  <div class="card">
-                     <div class="view overlay">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
-                        <a href="../admin_partners/">
-                           <div class="mask rgba-white-slight"></div>
-                        </a>
-                     </div>
-                     <!-- Card content -->
-                     <div class="card-body">
-                        <!-- Title -->
-                        <h4 class="card-title">Learning Partners</h4>
-                        <!-- Text -->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- Button -->
-                        <a href="#" class="btn btn-primary">Button</a>
-                     </div>
-                  </div>
-                  <!-- Card -->
-               </div>
+               <div class="container-fluid my-5 py-5">
 
-               <div class="col-lg-4">
-                  <div class="card">
-                     <div class="view overlay">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
-                        <a href="../admin_courses/">
-                           <div class="mask rgba-white-slight"></div>
-                        </a>
-                     </div>
-                     <!-- Card content -->
-                     <div class="card-body">
-                        <!-- Title -->
-                        <h4 class="card-title">Courses</h4>
-                        <!-- Text -->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- Button -->
-                        <a href="#" class="btn btn-primary">Button</a>
-                     </div>
-                  </div>
-                  <!-- Card -->
-               </div>
+  <!-- Section: Block Content -->
+  <section>
+    
+    <style>
+      .footer-hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out
+      }
 
-               <div class="col-lg-4">
-                  <div class="card">
-                     <div class="view overlay">
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
-                        <a href="../admin_students/">
-                           <div class="mask rgba-white-slight"></div>
-                        </a>
-                     </div>
-                     <!-- Card content -->
-                     <div class="card-body">
-                        <!-- Title -->
-                        <h4 class="card-title">Students</h4>
-                        <!-- Text -->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- Button -->
-                        <a href="#" class="btn btn-primary">Button</a>
-                     </div>
-                  </div>
-                  <!-- Card -->
-               </div>
+      .footer-hover:hover {
+        background-color: rgba(0, 0, 0, 0.2)
+      }
+
+      .text-black-40 {
+        color: rgba(0, 0, 0, 0.4)
+      }
+    </style>
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 col-lg-3 mb-4">
+
+        <!-- Card -->
+        <div class="card primary-color white-text">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div>
+              <p class="h2-responsive font-weight-bold mt-n2 mb-0">50</p>
+              <p class="mb-0">Learning Partners</p>
+            </div>
+            <div>
+              <i class="fas fa-handshake fa-4x text-black-40"></i>
+            </div>
+          </div>
+          <a href="../admin_partners/" class="card-footer footer-hover small text-center white-text border-0 p-2">More info<i class="fas fa-arrow-circle-right pl-2"></i></a>
+        </div>
+        <!-- Card -->
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-6 col-lg-3 mb-4">
+
+        <!-- Card -->
+        <div class="card warning-color white-text">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div>
+              <p class="h2-responsive font-weight-bold mt-n2 mb-0">90</p>
+              <p class="mb-0">Courses</p>
+            </div>
+            <div>
+              <i class="fas fa-chart-bar fa-4x text-black-40"></i>
+            </div>
+          </div>
+          <a href="../admin_courses/" class="card-footer footer-hover small text-center white-text border-0 p-2">More info<i class="fas fa-arrow-circle-right pl-2"></i></a>
+        </div>
+        <!-- Card -->
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-6 col-lg-3 mb-4">
+
+        <!-- Card -->
+        <div class="card light-blue lighten-1 white-text">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div>
+              <p class="h2-responsive font-weight-bold mt-n2 mb-0">1444</p>
+              <p class="mb-0">Students</p>
+            </div>
+            <div>
+              <i class="fas fa-user-plus fa-4x text-black-40"></i>
+            </div>
+          </div>
+          <a href="../admin_students/" class="card-footer footer-hover small text-center white-text border-0 p-2">More info<i class="fas fa-arrow-circle-right pl-2"></i></a>
+        </div>
+        <!-- Card -->
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-6 col-lg-3 mb-4">
+
+        <!-- Card -->
+        <div class="card red accent-2 white-text">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div>
+              <p class="h2-responsive font-weight-bold mt-n2 mb-0">65</p>
+              <p class="mb-0">Payments</p>
+            </div>
+            <div>
+              <!-- <i class="fa fa-money fa-4x text-black-40"></i> -->
+              <i class="fas fa-money-bill-alt fa-4x text-black-40"></i>
+            </div>
+          </div>
+          <a href="../admin_payments/" class="card-footer footer-hover small text-center white-text border-0 p-2">More info<i class="fas fa-arrow-circle-right pl-2"></i></a>
+        </div>
+        <!-- Card -->
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </section>
+  <!-- Section: Block Content -->
+
+</div>
             </div>
          </div>
          <div style="position:absolute; width:100%;bottom: 0px">

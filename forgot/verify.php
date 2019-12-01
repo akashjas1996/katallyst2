@@ -52,7 +52,7 @@ $mobile=0;
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://control.msg91.com/api/sendotp.php?template=hello&otp=".$otp."&otp_length=4&otp_expiry=10&sender=KIITFST&message=".$otp." is the mobile Verification code for KIITFEST 6.0. &mobile=".$mbl."&authkey=302677A7wYMfP8z5dc3ffa5",
+  CURLOPT_URL => "https://control.msg91.com/api/sendotp.php?template=hello&otp=".$otp."&otp_length=4&otp_expiry=10&sender=KATLYST&message=".$otp." is the mobile Verification code for KATALLYST. &mobile=".$mbl."&authkey=302677A7wYMfP8z5dc3ffa5",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
