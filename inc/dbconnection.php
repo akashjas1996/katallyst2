@@ -15,7 +15,7 @@ function decryptIt_webs($q) {
 date_default_timezone_set("Asia/Calcutta");
 $host="localhost";
 $user="u502039025_katallyst";
-$pass="mIX@&B~IGk";
+$pass="CkMbLkeW]v";
 $dbname="u502039025_katallyst";
 $link=@mysqli_connect($host,$user,$pass,$dbname);
     if(mysqli_connect_errno())
