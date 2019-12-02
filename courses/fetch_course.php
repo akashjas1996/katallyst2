@@ -53,30 +53,30 @@ if(mysqli_num_rows($result) > 0)
 	while($row_course = mysqli_fetch_array($result))
 	{
 		$output.='
-        <div style="margin-bottom:40px" class="col-lg-4">
+        <div style="margin-bottom:40px" class="col-lg-3">
           <!-- Card -->
           <div class="card">
             <!-- Card image -->
             <div class="view overlay">
               <img class="card-img-top" src="../courses/'.$row_course["course_image"].'"
                 alt="Card image cap">
-              <a href="#!">
+              <a href="../info?crs='.$row_course["course_id"].'">
                 <div class="mask rgba-white-slight"></div>
               </a>
             </div>
             <!-- Card content -->
             <div class="card-body">
               <!-- Title -->
-              <h4 class="card-title">'.$row_course["course_name"].'</h4>
-              <h6 class="card-title">'.$row_course["price"].'</h6>
+              <h6  class="card-title">'.$row_course["course_name"].'</h6>
+              <p style="line-height: 5px" class="card-title">'.$row_course["price"].'</p>
               <!-- Text -->
               <p class="card-text">'.$row_course["category"].'</p>
               <!-- Button -->
-              <a href="../info?crs='.$row_course["course_id"].'" class="btn btn-primary">DETAILS</a>
+               <!--a href="../info?crs='.$row_course["course_id"].'" class="btn btn-primary">DETAILS</a-->
 
                <form action="" method="POST" style="display: inline">
                 <input type="hidden" name="course_id" value='.$row_course['course_id'].'>
-              <input name="buy" type="submit" value="ENROLL" class="btn btn-primary"></a>
+              <input style="margin:1px" name="buy" type="submit" value="ENROLL" class="btn btn-md btn-info"></a>
             </form>
 
 
