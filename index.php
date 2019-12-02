@@ -1,7 +1,7 @@
 <?php session_start(); 
 include 'inc/redirection.php';
 include 'inc/dbconnection.php';
-
+redirect('courses');
 function manipulate($str){
   $str = substr($str, 0,80);
   $str=$str.'...';
