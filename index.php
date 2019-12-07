@@ -1,12 +1,11 @@
-<?php session_start(); 
-include 'inc/redirection.php';
-include 'inc/dbconnection.php';
-redirect('courses');
+<?php include 'inc/dbconnection.php';
+
 function manipulate($str){
   $str = substr($str, 0,80);
   $str=$str.'...';
   return($str);
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -16,138 +15,299 @@ function manipulate($str){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Katallyst | Lifelong Learning</title>
+  <title>KATALLYST | Lifelong Learning</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css2/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="css2/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href="css/style.min.css" rel="stylesheet">
+  <link href="css2/style.min.css" rel="stylesheet">
   <style type="text/css">
     html,
     body,
     header,
-    .carousel {
-      height: 60vh;
+    .view {
+      height: 100%;
     }
 
     @media (max-width: 740px) {
-
       html,
       body,
       header,
-      .carousel {
-        height: 100vh;
+      .view {
+        height: 1000px;
       }
     }
 
     @media (min-width: 800px) and (max-width: 850px) {
-
       html,
       body,
       header,
-      .carousel {
-        height: 100vh;
+      .view {
+        height: 650px;
       }
     }
-
     @media (min-width: 800px) and (max-width: 850px) {
-      .navbar:not(.top-nav-collapse) {
-        background: #929FBA !important;
-      }
-    }
-
+              .navbar:not(.top-nav-collapse) {
+                  background: #b93a3e!important;
+              }
+          }
   </style>
 </head>
 
 <body>
 
-
-
-    <!-- Navbar -->
-
-   
-
-
-  <!--Main layout-->
-  <main>
-     <?php include 'inc/header.php' ?>
-
-    <div style="margin:0px; padding: 0px" class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <img src="">
-        </div>
-      </div>
-    </div>
-
-
+  <!-- Navbar -->
+  <nav style="opacity: 80%" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
     <div class="container">
-      <!--Section: Main info-->
-      <section class="mt-5 wow fadeIn">
 
-        <!--Grid row-->
-        <div class="row">
+      <!-- Brand -->
+      <a class="navbar-brand" href="https://katallyst.com">
+        <!-- <strong>MDB</strong> -->
+        <img src="img/logo_2x.png">
+      </a>
 
-          <!--Grid column-->
-          <div class="col-md-6 mb-4">
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <img src="https://mdbootstrap.com/img/Marketing/mdb-press-pack/mdb-main.jpg" class="img-fluid z-depth-1-half"
-              alt="">
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-md-6 mb-4">
-
-            <!-- Main heading -->
-            <h3 class="h3 mb-3">About Katallyst</h3>
-            <p>Write something about katallys (
-              <strong>Constrontium Pvt. Ltd.</strong> )</p>
-            <p>How it helps students industry ready.</p>
-            <!-- Main heading -->
-
-            <hr>
-
-            <p>
-              <strong>400+</strong> courses,
-              <strong>1200+</strong> Students
-              <strong>74</strong> Learning partners from all over india.
-              <!-- <strong>Free for personal and commercial use.</strong> -->
-            </p>
-
-            <!-- CTA -->
-            <a target="_blank" href="#" class="btn btn-grey btn-md">Download
-              <i class="fas fa-download ml-1"></i>
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="https://katallyst.com">Home
+              <span class="sr-only">(current)</span>
             </a>
-            <a target="_blank" href="#" class="btn btn-grey btn-md">Live
-              demo
-              <i class="far fa-image ml-1"></i>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://katallyst.com/courses/">Courses</a>
+          </li>
+         <?php 
+         if(isset($_SESSION['userid'])){
+              echo '<li class="nav-item">
+            <a class="nav-link" href="https://katallyst.com/dashboard/"">'.$_SESSION['name'].' ?></a>
+          </li>';
+
+          echo '<li class="nav-item">
+            <a class="nav-link" href="https://katallyst.com/logout/"">Logout</a>
+          </li>';
+            }
+
+            else{
+              echo '<li class="nav-item">
+            <a class="nav-link" href="https://katallyst.com/login/"">Login</a>
+          </li>';
+            }
+
+
+          ?>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a href="https://www.facebook.com/katallyst" class="nav-link" target="_blank">
+              <i class="fab fa-facebook-f"></i>
             </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li> -->
+          <?php if(!isset($_SESSION['userid'])){ 
+            echo '<li class="nav-item">
+            <a href="https://github.com/register/" class="nav-link border border-light rounded"
+              ">
+              <i class="fas fa-user-plus"></i>Register
+            </a>
+          </li>';
+          }
 
-          </div>
-          <!--Grid column-->
 
-        </div>
-        <!--Grid row-->
+          ?>
+        </ul>
 
-      </section>
-      <!--Section: Main info-->
+      </div>
 
-      <hr class="my-5">
+    </div>
+  </nav>
+  <!-- Navbar -->
 
-      <!--Section: Main features & Quick Start-->
-      <section>
+  <!-- Full Page Intro -->
+  <div class="view full-page-intro" style="background-image: url('img/fullscreen-slider.jpg'); background-repeat: no-repeat; background-size: cover;">
 
-        <h3 class="h3 text-center mb-5">About Katallyst</h3>
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+      <!-- Content -->
+      <div class="container">
 
         <!--Grid row-->
         <div class="row wow fadeIn">
 
           <!--Grid column-->
+          <div class="col-md-6 mb-4 white-text text-center text-md-left">
+
+            <center> <img style="width: 80%" src="img/logo_2x.png"></center>
+
+            <!--h1 class="display-4 font-weight-bold">Learn Bootstrap 4 with MDB</h1-->
+
+            <hr class="hr-light" style="width: 70%">
+
+            <p>
+              <center> <strong>Lifelong Learning</strong> </center>
+            </p>
+
+            <p class="mb-4 d-none d-md-block">
+              <strong></strong>
+            </p>
+            <center>
+            <a href="register/" class="btn btn-danger btn-lg">Register now
+              <i class="fas fa-graduation-cap ml-2"></i>
+            </a>
+          </center>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <!--div class="col-md-6 col-xl-5 mb-4">
+
+
+            <div class="card">
+
+
+              <div class="card-body">
+
+
+                <form name="">
+
+                  <h3 class="dark-grey-text text-center">
+                    <strong>Write to us:</strong>
+                  </h3>
+                  <hr>
+
+                  <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input type="text" id="form3" class="form-control">
+                    <label for="form3">Your name</label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="text" id="form2" class="form-control">
+                    <label for="form2">Your email</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fas fa-pencil-alt prefix grey-text"></i>
+                    <textarea type="text" id="form8" class="md-textarea"></textarea>
+                    <label for="form8">Your message</label>
+                  </div>
+
+                  <div class="text-center">
+                    <button class="btn btn-indigo">Send</button>
+                    <hr>
+                    <fieldset class="form-check">
+                      <input type="checkbox" class="form-check-input" id="checkbox1">
+                      <label for="checkbox1" class="form-check-label dark-grey-text">Subscribe me to the newsletter</label>
+                    </fieldset>
+                  </div>
+
+                </form>
+
+
+              </div>
+
+            </div>
+
+
+          </div-->
+
+
+        </div>
+
+
+      </div>
+      <!-- Content -->
+
+    </div>
+    <!-- Mask & flexbox options-->
+
+  </div>
+  <!-- Full Page Intro -->
+
+  <!--Main layout-->
+  <main>
+    <div class="container">
+
+      <!--Section: Main info-->
+      <!-- <section class="mt-5 wow fadeIn">
+
+
+        <div class="row">
+
+
+          <div class="col-md-6 mb-4">
+
+            <img src="https://mdbootstrap.com/img/Marketing/mdb-press-pack/mdb-main.jpg" class="img-fluid z-depth-1-half" alt="">
+
+          </div>
+
+
+
+          <div class="col-md-6 mb-4">
+
+
+            <h3 class="h3 mb-3">Material Design for Bootstrap</h3>
+            <p>This template is created with Material Design for Bootstrap (
+              <strong>MDB</strong> ) framework.</p>
+            <p>Read details below to learn more about MDB.</p>
+
+            <hr>
+
+            <p>
+              <strong>400+</strong> material UI elements,
+              <strong>600+</strong> material icons,
+              <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
+              <strong>Free for personal and commercial use.</strong>
+            </p>
+
+
+            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-indigo btn-md">Download
+              <i class="fas fa-download ml-1"></i>
+            </a>
+            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-indigo btn-md">Live demo
+              <i class="far fa-image ml-1"></i>
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </section>
+
+
+      <hr class="my-5">
+
+
+      <section> -->
+
+        <h3 class="h3 text-center my-5 mb-2">Choose the best</h3>
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <br>
           <div class="col-lg-6 col-md-12 px-4">
 
             <!--First row-->
@@ -170,8 +330,9 @@ function manipulate($str){
                 <i class="fas fa-book fa-2x blue-text"></i>
               </div>
               <div class="col-10">
-                <h5 class="feature-title"></h5>
-                <p class="grey-text">You get the best course contents ever. 
+                <h5 class="feature-title">Detailed Contents</h5>
+                <p class="grey-text">You get the best course contents ever.
+                  easily.
                 </p>
               </div>
             </div>
@@ -193,51 +354,54 @@ function manipulate($str){
 
           </div>
           <!--/Grid column-->
-
+          <hr class="my-5 mb-5" >
           <!--Grid column-->
           <div class="col-lg-6 col-md-12">
 
-            <p class="h5 text-center mb-4">Watch our "5 min Quick Start" tutorial</p>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
-            </div>
+            <p class="h5 text-center mb-2"></p>
+            <img style="width: 100%" src="img/poster.jpeg">
+            <!--div class="embed-responsive embed-responsive-16by9">
+               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe> >
+            </div-->
           </div>
           <!--/Grid column-->
 
         </div>
         <!--/Grid row-->
 
+
       </section>
+
+      <hr class="my-5 mb-5" >
       <!--Section: Main features & Quick Start-->
 
-      <hr class="my-5">
+      
 
       <!--Section: Not enough-->
-      <section>
+      <!--section>
 
         <h2 class="my-5 h3 text-center">Not enough?</h2>
 
-        <!--First row-->
+
         <div class="row features-small mb-5 mt-3 wow fadeIn">
 
-          <!--First column-->
+
           <div class="col-md-4">
-            <!--First row-->
+
             <div class="row">
               <div class="col-2">
                 <i class="fas fa-check-circle fa-2x indigo-text"></i>
               </div>
               <div class="col-10">
                 <h6 class="feature-title">Free for personal and commercial use</h6>
-                <p class="grey-text">Our license is user-friendly. Feel free to use MDB for both private as well as
-                  commercial projects.
+                <p class="grey-text">Our license is user-friendly. Feel free to use MDB for both private as well as commercial projects.
                 </p>
                 <div style="height:15px"></div>
               </div>
             </div>
-            <!--/First row-->
 
-            <!--Second row-->
+
+
             <div class="row">
               <div class="col-2">
                 <i class="fas fa-check-circle fa-2x indigo-text"></i>
@@ -249,9 +413,9 @@ function manipulate($str){
                 <div style="height:15px"></div>
               </div>
             </div>
-            <!--/Second row-->
 
-            <!--Third row-->
+
+
             <div class="row">
               <div class="col-2">
                 <i class="fas fa-check-circle fa-2x indigo-text"></i>
@@ -262,50 +426,45 @@ function manipulate($str){
                 <div style="height:15px"></div>
               </div>
             </div>
-            <!--/Third row-->
 
-            <!--Fourth row-->
+
+
             <div class="row">
               <div class="col-2">
                 <i class="fas fa-check-circle fa-2x indigo-text"></i>
               </div>
               <div class="col-10">
                 <h6 class="feature-title">Fully responsive</h6>
-                <p class="grey-text">It doesn't matter whether your project will be displayed on desktop, laptop,
-                  tablet or mobile phone. MDB
+                <p class="grey-text">It doesn't matter whether your project will be displayed on desktop, laptop, tablet or mobile phone. MDB
                   looks great on each screen.</p>
                 <div style="height:15px"></div>
               </div>
             </div>
-            <!--/Fourth row-->
-          </div>
-          <!--/First column-->
 
-          <!--Second column-->
+          </div>
+
+
+
           <div class="col-md-4 flex-center">
-            <img src="https://mdbootstrap.com/img/Others/screens.png" alt="MDB Magazine Template displayed on iPhone"
-              class="z-depth-0 img-fluid">
+            <img src="https://mdbootstrap.com/img/Others/screens.png" alt="MDB Magazine Template displayed on iPhone" class="z-depth-0 img-fluid">
           </div>
-          <!--/Second column-->
 
-          <!--Third column-->
+
+
           <div class="col-md-4 mt-2">
-            <!--First row-->
+
             <div class="row">
               <div class="col-2">
                 <i class="fas fa-check-circle fa-2x indigo-text"></i>
               </div>
               <div class="col-10">
                 <h6 class="feature-title">70+ CSS animations</h6>
-                <p class="grey-text">Neat and easy to use animations, which will increase the interactivity of your
-                  project and delight your visitors.
+                <p class="grey-text">Neat and easy to use animations, which will increase the interactivity of your project and delight your visitors.
                 </p>
                 <div style="height:15px"></div>
               </div>
             </div>
-            <!--/First row-->
 
-            <!--Second row-->
             <div class="row">
               <div class="col-2">
                 <i class="fas fa-check-circle fa-2x indigo-text"></i>
@@ -316,9 +475,7 @@ function manipulate($str){
                 <div style="height:15px"></div>
               </div>
             </div>
-            <!--/Second row-->
 
-            <!--Third row-->
             <div class="row">
               <div class="col-2">
                 <i class="fas fa-check-circle fa-2x indigo-text"></i>
@@ -330,27 +487,34 @@ function manipulate($str){
                 <div style="height:15px"></div>
               </div>
             </div>
-            <!--/Third row-->
 
-            <!--Fourth row-->
             <div class="row">
               <div class="col-2">
                 <i class="fas fa-check-circle fa-2x indigo-text"></i>
               </div>
               <div class="col-10">
                 <h6 class="feature-title">Easy to use and customize</h6>
-                <p class="grey-text">Using MDB is straightforward and pleasant. Components flexibility allows you deep
-                  customization. You will
+                <p class="grey-text">Using MDB is straightforward and pleasant. Components flexibility allows you deep customization. You will
                   easily adjust each component to suit your needs.</p>
                 <div style="height:15px"></div>
               </div>
             </div>
+
           </div>
+
+
         </div>
-      </section>
-      <hr class="mb-5">
-      <section>
-        <h2 class="my-5 h3 text-center">...and even more</h2>
+
+
+      </section-->
+
+
+      <!-- <hr class="mb-5"> -->
+
+     
+      <!--Section: More-->
+     <section>
+        <h2 class="my-1 h3 text-center">COURSES YOU MAY LIKE</h2>
         <div class="row features-small mt-5 wow fadeIn">
           <?php
           $query_courses = "SELECT * FROM course_learning_details ORDER BY rand() LIMIT 8";
@@ -387,25 +551,23 @@ function manipulate($str){
   <!--Main layout-->
 
   <!--Footer-->
-  <footer class="danger-color page-footer text-center font-small mt-4 wow fadeIn">
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn danger-color">
 
     <!--Call to action-->
     <div class="pt-4">
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank"
-        role="button">Download MDB
-        <i class="fas fa-download ml-2"></i>
+      <a class="btn btn-outline-white" href="https://katallyst.com/courses" role="button">See All courses
+        <i class="fas fa-pen ml-2"></i>
       </a>
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start
-        free tutorial
-        <i class="fas fa-graduation-cap ml-2"></i>
+      <a class="btn btn-outline-white" href="https://katallyst.com/register/" role="button">Register Now
+        <i class="fa fa-graduation-cap ml-2"></i>
       </a>
     </div>
     <!--/.Call to action-->
 
-    <hr class="my-4">
+    <!-- <hr class="my-4"> -->
 
     <!-- Social icons -->
-    <div class="pb-4">
+    <!--div class="pb-4">
       <a href="https://www.facebook.com/mdbootstrap" target="_blank">
         <i class="fab fa-facebook-f mr-3"></i>
       </a>
@@ -437,10 +599,17 @@ function manipulate($str){
       <a href="http://codepen.io/mdbootstrap/" target="_blank">
         <i class="fab fa-codepen mr-3"></i>
       </a>
-    </div>
+    </div-->
     <!-- Social icons -->
 
-<?php include 'inc/footer.php' ?>
+    <!--Copyright-->
+   <!--  <div class="footer-copyright py-3">
+      © 2019 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+    </div> -->
+    <!--/.Copyright-->
+
+<?php include 'inc/footer.php'; ?>
 
   </footer>
   <!--/.Footer-->
@@ -458,7 +627,6 @@ function manipulate($str){
   <script type="text/javascript">
     // Animations initialization
     new WOW().init();
-
   </script>
 </body>
 

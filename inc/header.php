@@ -39,7 +39,7 @@
   <div style="z-index: 6" class="collapse navbar-collapse danger-color" id="navbarSupportedContent-333">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="./">Home
+        <a class="nav-link" href="../">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>

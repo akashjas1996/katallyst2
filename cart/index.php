@@ -130,7 +130,7 @@ else{
               // echo $course_image;
            ?>
 
-          <img src="https://katallyst.com/katallyst_admin/<?php echo $course_image ?>" class="img-fluid" alt="">
+          <img src="../courses/<?php echo $course_image ?>" class="img-fluid" alt="">
         </div>
         <!--Grid column-->
        
