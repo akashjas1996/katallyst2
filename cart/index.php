@@ -29,7 +29,7 @@ if(isset($_POST['del_course'])){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>COURSES | Katallyst</title>
+  <title>CART | Katallyst</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -70,7 +70,7 @@ if(isset($_POST['del_course'])){
 
 <?php 
 $stud_id = $_SESSION['userid'];
-$query_en = "SELECT * FROM tbl_enrollment WHERE payment_status!=1 AND stud_id='$stud_id'";
+$query_en = "SELECT * FROM tbl_enrollment ORDER BY enroll_id DESC WHERE payment_status!=1 AND stud_id='$stud_id'";
 $res_en = mysqli_query($link, $query_en);
 if(mysqli_num_rows($res_en)==0){
   echo '    <div class="container my-5 py-5 z-depth-0">
