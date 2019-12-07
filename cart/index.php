@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start(); 
+?>
 <?php include '../inc/dbconnection.php';
 
 include '../inc/logincheck.php';
@@ -51,6 +52,7 @@ if(isset($_POST['del_course'])){
 
 
   <?php include '../inc/header.php';
+
   // if(!isset($_GET['crs'])){
   //   redirect('../courses');
   // }

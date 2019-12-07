@@ -1,5 +1,5 @@
 <?php include 'inc/dbconnection.php';
-
+session_start();
 function manipulate($str){
   $str = substr($str, 0,80);
   $str=$str.'...';
