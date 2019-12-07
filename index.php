@@ -24,6 +24,7 @@ function manipulate($str){
   <link href="css2/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css2/style.min.css" rel="stylesheet">
+  <link rel="icon" href="img/favicon.png">
   <style type="text/css">
     html,
     body,
