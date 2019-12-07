@@ -54,6 +54,9 @@ function manipulate($str){
                   background: #b93a3e!important;
               }
           }
+    .nav-link{
+      /*color: #b93a3e!i;*/
+    }
   </style>
 </head>
 
@@ -123,7 +126,7 @@ function manipulate($str){
           </li> -->
           <?php if(!isset($_SESSION['userid'])){ 
             echo '<li class="nav-item">
-            <a href="https://github.com/register/" class="nav-link border border-light rounded"
+            <a href="https://katallyst.com/register/" class="nav-link border border-light rounded"
               ">
               <i class="fas fa-user-plus"></i>Register
             </a>
@@ -301,7 +304,7 @@ function manipulate($str){
 
       <section> -->
 
-        <h3 class="h3 text-center my-5 mb-2">Choose the best</h3>
+        <h3 class="h3 text-center my-5 mb-2">CHOOSE THE BEST</h3>
 
         <!--Grid row-->
         <div class="row wow fadeIn">
@@ -551,7 +554,7 @@ function manipulate($str){
   <!--Main layout-->
 
   <!--Footer-->
-  <footer class="page-footer text-center font-small mt-4 wow fadeIn danger-color">
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
 
     <!--Call to action-->
     <div class="pt-4">
@@ -603,13 +606,13 @@ function manipulate($str){
     <!-- Social icons -->
 
     <!--Copyright-->
-   <!--  <div class="footer-copyright py-3">
+    <div class="footer-copyright py-3">
       © 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
-    </div> -->
+      <a href="https://katallyst.com"> Katallyst.com </a>
+    </div>
     <!--/.Copyright-->
 
-<?php include 'inc/footer.php'; ?>
+<!--?php include 'inc/footer.php'; ?-->
 
   </footer>
   <!--/.Footer-->
