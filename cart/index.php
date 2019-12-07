@@ -70,7 +70,7 @@ if(isset($_POST['del_course'])){
 
 <?php 
 $stud_id = $_SESSION['userid'];
-$query_en = "SELECT * FROM tbl_enrollment ORDER BY enroll_id DESC WHERE payment_status!=1 AND stud_id='$stud_id'";
+$query_en = "SELECT * FROM tbl_enrollment WHERE payment_status!=1 AND stud_id='$stud_id' ORDER BY enroll_id DESC";
 $res_en = mysqli_query($link, $query_en);
 if(mysqli_num_rows($res_en)==0){
   echo '    <div class="container my-5 py-5 z-depth-0">
