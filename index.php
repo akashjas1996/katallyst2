@@ -94,7 +94,7 @@ function manipulate($str){
          <?php 
          if(isset($_SESSION['userid'])){
               echo '<li class="nav-item">
-            <a class="nav-link" href="https://katallyst.com/dashboard/"">'.$_SESSION['name'].' ?></a>
+            <a class="nav-link" href="https://katallyst.com/dashboard/"">'.$_SESSION['name'].'</a>
           </li>';
 
           echo '<li class="nav-item">
