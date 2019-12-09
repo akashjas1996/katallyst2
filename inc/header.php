@@ -103,7 +103,7 @@
           aria-labelledby="navbarDropdownMenuLink-333">
           <?php if(isset($_SESSION['userid'])) 
             echo '<a style="font-weight:bold" class="dropdown-item" href="../student">'.$_SESSION["name"].'</a>';
-            echo '<a class="dropdown-item" href="../dashboard">LOGOUT</a>';
+            echo '<a class="dropdown-item" href="../logout">LOGOUT</a>';
           ?>
         </div>
       </li>
