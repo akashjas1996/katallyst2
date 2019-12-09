@@ -205,7 +205,7 @@ if(isset($_POST['buy'])){
 
           <br>
           <i class="fa fa-money" aria-hidden="true"></i>
-          <p style="display: inline-block" class="font-weight-bold">₹<?php echo $row_course['price'] ?></p>
+          <p style="display: inline-block" class="font-weight-bold"> ₹ <?php echo $row_course['price'] ?></p>
          <!--  &nbsp;&nbsp;&nbsp;&nbsp;
           <i class="fa fa-book" aria-hidden="true"></i>
            <p style="display: inline-block" class="font-weight-bold"><?php echo $row_course['learning_partner'] ?></p> -->

@@ -53,6 +53,11 @@ if(isset($_POST['del_course'])){
 
   <?php include '../inc/header.php';
 
+
+
+
+  // echo 'User IP - '.$_SERVER['REMOTE_ADDR'];
+
   // if(!isset($_GET['crs'])){
   //   redirect('../courses');
   // }
@@ -142,7 +147,7 @@ else{
           <h3 class="font-weight-bold"><?php echo $row_en['course_name'] ?></h3>
 
            <i class="fa fa-money" aria-hidden="true"></i> &nbsp;
-          <p style="display: inline-block" class="font-weight-bold">₹<?php $total_amt=$row_en['fee']; echo $total_amt; ?></p>
+          <p style="display: inline-block" class="font-weight-bold"> ₹ <?php $total_amt=$row_en['fee']; echo $total_amt; ?></p>
 
           <p class="text-muted"><?php echo $row_course_image['description'] ?></p>
          
@@ -171,21 +176,10 @@ else{
                      $newmsg = $str.'|'.$checksum;
 
                   ?>
-
-
-
                   <form style="display: inline; width: 100%" action="https://pgi.billdesk.com/pgidsk/PGIMerchantPayment" id="billdesk_payment" method="POST">
                     <input type="hidden" name="msg" value="<?php echo $newmsg; ?>">
                     <button type="submit" class="btn btn-outline-default waves-effect">ONLINE</button>
                   </form>
-
-
-
-            
-          
-
-
-
           </div>
 
         </div>
@@ -198,9 +192,6 @@ else{
 
 
   </div>
-
-
-
 <?php 
   } //while loop
 } //else condition

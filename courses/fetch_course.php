@@ -68,7 +68,7 @@ if(mysqli_num_rows($result) > 0)
             <div class="card-body">
               <!-- Title -->
               <h6  class="card-title">'.$row_course["course_name"].'</h6>
-              <p style="line-height: 5px" class="card-title">'.$row_course["price"].'</p>
+              <p style="line-height: 5px" class="card-title"> ₹ '.$row_course["price"].'</p>
               <!-- Text -->
               <p class="card-text">'.$row_course["category"].'</p>
               <!-- Button -->
