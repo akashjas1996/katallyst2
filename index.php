@@ -41,6 +41,9 @@ function manipulate($str){
         height: 1000px;
       }
     }
+    .br{
+      border:1px solid black;
+    }
 
     @media (min-width: 800px) and (max-width: 850px) {
       html,
@@ -145,19 +148,25 @@ function manipulate($str){
   <!-- Navbar -->
 
   <!-- Full Page Intro -->
-  <div class="view full-page-intro" style="background-image: url('img/fullscreen-slider.jpg'); background-repeat: no-repeat; background-size: cover;">
+  <!-- <div class="view full-page-intro" style="background-image: url('img/fullscreen-slider.jpg'); background-repeat: no-repeat; background-size: cover;"> -->
+
+      <div class="view full-page-intro" style="background-image: linear-gradient(to bottom, rgba(200, 200, 200, 0.01), rgba(255, 245, 245, 0.9)),
+url('img/fullscreen-slider.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+<!--     linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
+url('images/background.jpg'); -->
 
     <!-- Mask & flexbox options-->
     <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
 
       <!-- Content -->
-      <div class="container">
+      <div style="margin: 20px" class="container-fluid">
 
         <!--Grid row-->
         <div class="row wow fadeIn">
 
           <!--Grid column-->
-          <div class="col-md-6 mb-4 white-text text-center text-md-left">
+           <div class="col-md-6 mb-4 white-text text-center text-md-left">
 
             <center> <img style="width: 80%" src="img/logo_2x.png"></center>
 
@@ -252,7 +261,7 @@ function manipulate($str){
     <div class="container">
 
       <!--Section: Main info-->
-      <!-- <section class="mt-5 wow fadeIn">
+      <section class="mt-5 wow fadeIn">
 
 
         <div class="row">
@@ -260,7 +269,9 @@ function manipulate($str){
 
           <div class="col-md-6 mb-4">
 
-            <img src="https://mdbootstrap.com/img/Marketing/mdb-press-pack/mdb-main.jpg" class="img-fluid z-depth-1-half" alt="">
+            <div class="embed-responsive embed-responsive-16by9">
+               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8n0vuIYZjuQ" allowfullscreen></iframe> >
+            </div>
 
           </div>
 
@@ -269,27 +280,22 @@ function manipulate($str){
           <div class="col-md-6 mb-4">
 
 
-            <h3 class="h3 mb-3">Material Design for Bootstrap</h3>
-            <p>This template is created with Material Design for Bootstrap (
-              <strong>MDB</strong> ) framework.</p>
-            <p>Read details below to learn more about MDB.</p>
+            <h3 class="h3 mb-3">About Katallyst</h3>
+             An Industry 4.0 Competency Development Forum & Learning Hub equipped with current Industry Trend along with predictive blend Of Nextgen Technologies, having a cogent & compelling collaboration with leading Academia & Industries , is all Set To nourish, nurture & empower the learners to become Industry 4.0 ready.
 
             <hr>
 
             <p>
-              <strong>400+</strong> material UI elements,
-              <strong>600+</strong> material icons,
-              <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
-              <strong>Free for personal and commercial use.</strong>
+             Katallyst takes care of a student's holistic development starting from Placement Training (from aptitude training, honing reasoning skills and tuning up their soft skills to tech skills in lining up to the Industry 4.0) with a team of dedicated faculties , management trainees, executives who are the best in the industry for guiding the students.
             </p>
 
 
-            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-indigo btn-md">Download
+           <!--  <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-indigo btn-md">Download
               <i class="fas fa-download ml-1"></i>
             </a>
             <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-indigo btn-md">Live demo
               <i class="far fa-image ml-1"></i>
-            </a>
+            </a> -->
 
           </div>
 
@@ -303,7 +309,7 @@ function manipulate($str){
       <hr class="my-5">
 
 
-      <section> -->
+      <section>
 
         <h3 class="h3 text-center my-5 mb-2">CHOOSE THE BEST</h3>
 
