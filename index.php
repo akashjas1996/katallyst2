@@ -61,6 +61,14 @@ function manipulate($str){
     .nav-link{
       /*color: #b93a3e!i;*/
     }
+
+    .gradient{
+      body {
+  background: #eb01a5;
+  background-image: url("IMAGE_URL"); /* fallback */
+  background-image: url("IMAGE_URL"), linear-gradient(#eb01a5, #d13531); /* W3C */
+}
+    }
   </style>
 </head>
 
@@ -150,7 +158,7 @@ function manipulate($str){
   <!-- Full Page Intro -->
   <!-- <div class="view full-page-intro" style="background-image: url('img/fullscreen-slider.jpg'); background-repeat: no-repeat; background-size: cover;"> -->
 
-      <div class="view full-page-intro" style="background-image: linear-gradient(to bottom, rgba(200, 200, 200, 0.01), rgba(255, 245, 245, 0.9)),
+      <div class="view full-page-intro" style="background-image: linear-gradient(to bottom, rgba(200, 200, 200, 0.0), rgba(255, 245, 245, 1)),
 url('img/fullscreen-slider.jpg'); background-repeat: no-repeat; background-size: cover;">
 
 <!--     linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
@@ -261,7 +269,7 @@ url('images/background.jpg'); -->
     <div class="container">
 
       <!--Section: Main info-->
-      <section class="mt-5 wow fadeIn">
+      <!--section class="mt-5 wow fadeIn">
 
 
         <div class="row">
@@ -289,21 +297,13 @@ url('images/background.jpg'); -->
              Katallyst takes care of a student's holistic development starting from Placement Training (from aptitude training, honing reasoning skills and tuning up their soft skills to tech skills in lining up to the Industry 4.0) with a team of dedicated faculties , management trainees, executives who are the best in the industry for guiding the students.
             </p>
 
-
-           <!--  <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-indigo btn-md">Download
-              <i class="fas fa-download ml-1"></i>
-            </a>
-            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-indigo btn-md">Live demo
-              <i class="far fa-image ml-1"></i>
-            </a> -->
-
           </div>
 
 
         </div>
 
 
-      </section>
+      </section-->
 
 
       <hr class="my-5">
