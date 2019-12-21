@@ -47,7 +47,7 @@
             <!-- Card content -->
             <div class="card-body">
               <!-- Title -->
-              <h6 style="line-height: 5px" class="card-title"><?php echo manipulate_title($row_course['course_name']) ?></h6>
+              <h6 class="card-title"><?php echo manipulate_title($row_course['course_name']) ?></h6>
               <p style="line-height: 5px" class="card-title"> ₹ <?php echo $row_course['price'] ?></p>
               <!-- Text -->
               <p style="line-height: 15px" class="card-text"><?php echo $row_course['category'] ?></p>

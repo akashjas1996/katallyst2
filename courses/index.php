@@ -86,12 +86,12 @@ function manipulate_title($str){
        <div class="row">
 
          <div class="col-lg-2">
-       Hello
+
     </div>
 
 
         <div class="col-lg-10">
-       <div class="container br">
+       <div class="container">
       <div class="row">
         <div class="row" id="output">
       </div>
