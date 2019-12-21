@@ -29,6 +29,11 @@ function manipulate_title($str){
   <link href="../css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="../css/style.css" rel="stylesheet">
+  <style>
+    .br{
+      border:1px solid black;
+    }
+  </style>
 </head>
 
 <body style="background-color: #fff0f0">
@@ -58,7 +63,7 @@ function manipulate_title($str){
 
 
 
-    <div class="container" style="margin-bottom: 120px">
+    <div class="container-fluid" style="margin-bottom: 120px">
       <div class="row">
 
         <div class="container">
@@ -66,7 +71,7 @@ function manipulate_title($str){
             <div class="col-lg-12">
               <!-- Search form -->
 <form class="form-inline md-form form-sm">
-  <input onkeyup="search_input(this.value)" class="form-control form-control-sm mr-3 w-40" type="text" placeholder="Search"
+  <input onkeyup="search_input(this.value)" class="form-control form-control-sm mr-2 w-90" style="margin-left:0px !important" type="text" placeholder="Search"
     aria-label="Search">
   <i class="fas fa-search" aria-hidden="true"></i>
 </form>
@@ -76,8 +81,17 @@ function manipulate_title($str){
         </div>
         <!-- start of card -->
        <!--?php include 'courses.php'; ?-->
-       <!--div style="width: 100%; border:1px solid black"--> 
-       <div class="container" style="margin-bottom: 120px">
+       <!--div style="width: 100%; border:1px solid black"-->
+       <div class="container">
+       <div class="row">
+
+         <div class="col-lg-2">
+       Hello
+    </div>
+
+
+        <div class="col-lg-10">
+       <div class="container br">
       <div class="row">
         <div class="row" id="output">
       </div>
@@ -87,6 +101,11 @@ function manipulate_title($str){
           <?php include 'courses.php' ?>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
         
        <hr style="color: black">        
       </div>
