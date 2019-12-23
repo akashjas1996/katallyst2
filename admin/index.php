@@ -68,8 +68,8 @@ include '../inc/redirection.php';
       $row_query = mysqli_fetch_assoc($res_query);
       if(mysqli_num_rows($res_query)==1){
         echo "Login Success";
-        session_destroy();
-        session_start();
+        // session_destroy();
+        // session_start();
         $_SESSION['admin_username'] = $row_query['username'];
         $_SESSION['admin_name'] = $row_query['name'] ;
         redirect('../admin_dashboard/');
