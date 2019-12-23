@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php include '../inc/dbconnection.php';
+include '../inc/redirection.php';
 
 function manipulate_title($str){
   $count = strlen($str);
@@ -11,6 +12,9 @@ function manipulate_title($str){
   return($str);
 
 }
+
+
+include '../inc/adminlogincheck.php';
 
 ?>
 <!DOCTYPE html>
