@@ -13,8 +13,12 @@ function manipulate_title($str){
 
 }
 
+// include '../inc/adminlogincheck.php';
 
-include '../inc/adminlogincheck.php';
+if(!isset($_SESSION['admin_username'])){
+  redirect('https://katallyst.com/admin/');
+}
+
 
 ?>
 <!DOCTYPE html>
