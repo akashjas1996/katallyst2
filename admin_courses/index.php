@@ -11,7 +11,9 @@ function manipulate_title($str){
   return($str);
 
 }
-
+  if(!isset($_SESSION['admin_username'])){
+    redirect('../admin/')
+  }
 ?>
 
 
