@@ -28,11 +28,11 @@
     $sql_upd2 = "UPDATE verticals SET details='$intn' WHERE name='Internship'";
     $sql_upd3 = "UPDATE verticals SET details='$corp' WHERE name='Corporate'";
 
-    // echo $sql_upd1;
-    // echo '<br>';
-    // echo $sql_upd2;
-    // echo '<br>';
-    // echo $sql_upd3;
+    echo $sql_upd1;
+    echo '<br>';
+    echo $sql_upd2;
+    echo '<br>';
+    echo $sql_upd3;
 
     $res_upd1 = mysqli_query($link, $sql_upd1);
     $res_upd2 = mysqli_query($link, $sql_upd2);
