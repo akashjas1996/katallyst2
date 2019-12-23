@@ -24,7 +24,7 @@
     $intn =  $_POST['internship'];
     $corp =  $_POST['corporate'];
 
-    $sql_upd1 = "UPDATE Verticals SET details='$aca' WHERE name='Academics'";
+    $sql_upd1 = "UPDATE verticals SET details='$aca' WHERE name='Academics'";
     $sql_upd2 = "UPDATE verticals SET details='$intn' WHERE name='Internship'";
     $sql_upd3 = "UPDATE verticals SET details='$corp' WHERE name='Corporate'";
 
