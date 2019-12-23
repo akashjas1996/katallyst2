@@ -38,12 +38,12 @@ if(isset($_POST["query"]))
 	$q1 = $_POST['query'];
 	$search = mysqli_real_escape_string($link, $_POST["query"]);
 	$query = "
-	SELECT * FROM course_learning_details WHERE course_name LIKE '%".$search."%'";
+	SELECT * FROM course_learning_details WHERE verified>=0 AND course_name LIKE '%".$search."%'";
 }
 else
 {
 	$query = "
-	SELECT * FROM course_learning_details WHERE 1";
+	SELECT * FROM course_learning_details WHERE verified>=0";
 }
 
 $result = mysqli_query($link, $query);

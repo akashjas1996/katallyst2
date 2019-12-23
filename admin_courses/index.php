@@ -130,7 +130,7 @@ function manipulate_title($str){
     function load_data(query)
   {
     $.ajax({
-      url:"../courses/fetch_course.php",
+      url:"../admin_courses/fetch_course.php",
       method:"post",
       data:{query:query},
       success:function(data)

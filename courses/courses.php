@@ -29,7 +29,7 @@
 
 
 
- $query_course = "SELECT * FROM course_learning_details";
+ $query_course = "SELECT * FROM course_learning_details WHERE verified>=0";
         $res_course = mysqli_query($link, $query_course);
         while($row_course = mysqli_fetch_assoc($res_course)){
          ?>

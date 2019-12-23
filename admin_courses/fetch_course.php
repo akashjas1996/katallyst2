@@ -7,26 +7,11 @@ include '../inc/dbconnection.php';
 
 include '../inc/redirection.php';
  
-                if(isset($_POST['buy'])){
+                if(isset($_POST['delete_course'])){
                   $course_id = $_POST['course_id'];
-                  $qex = "SELECT * FROM course_learning_details WHERE course_id='$course_id'";
+                  $qex = "UPDATE course_learning_details SET verified='-1' WHERE course_id='$course_id'";
                   $resx = mysqli_query($link, $qex);
-                  $row_course = mysqli_fetch_assoc($resx);
-
-
-                  $stud_id = $_SESSION['userid'];
-                  $price = $row_course['price'];
-                  $course_name = $row_course['course_name'];
-                  $fee = $row_course['price'];
-                  $start = $row_course['starting_date'];
-                  $end = $row_course['ending_date'];
-
-                  $query_enroll= $link->prepare("INSERT INTO tbl_enrollment(stud_id, course_id, course_name, fee, c_starting_date, c_ending_date) VALUES(?,?,?,?,?,?)");
-                  $query_enroll->bind_param("sssiss", $stud_id, $course_id, $course_name, $fee, $start, $end);
-                  $query_enroll->execute();
-                  echo ($query_enroll->error);
-                  redirect('../cart/');
-                  // echo $query_enroll->error();
+                  // echo mysqli_error($row_course);
                 }
 
 
@@ -38,12 +23,12 @@ if(isset($_POST["query"]))
 	$q1 = $_POST['query'];
 	$search = mysqli_real_escape_string($link, $_POST["query"]);
 	$query = "
-	SELECT * FROM course_learning_details WHERE course_name LIKE '%".$search."%'";
+	SELECT * FROM course_learning_details WHERE verified>=0 AND course_name LIKE '%".$search."%'";
 }
 else
 {
 	$query = "
-	SELECT * FROM course_learning_details WHERE 1";
+	SELECT * FROM course_learning_details WHERE verified>=0";
 }
 
 $result = mysqli_query($link, $query);
@@ -76,7 +61,7 @@ if(mysqli_num_rows($result) > 0)
 
                <form action="" method="POST" style="display: inline">
                 <input type="hidden" name="course_id" value='.$row_course['course_id'].'>
-              <input name="buy" type="submit" value="ENROLL" class="btn btn-primary"></a>
+              <input name="delete_course" type="submit" value="DELETE" class="btn btn-danger"></a>
             </form>
 
 

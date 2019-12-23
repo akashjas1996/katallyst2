@@ -57,6 +57,9 @@
          .nav-link{
          /*color: #b93a3e!i;*/
          }
+         .radius{
+
+         }
          .gradient{
          body {
          background: #eb01a5;
@@ -140,20 +143,22 @@
          <!-- Mask & flexbox options-->
          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
             <!-- Content -->
-            <div style="margin: 20px" class="container">
+            <div style="" class="container ">
                <!--Grid row-->
                <div class="row wow fadeIn">
                   <!--Grid column-->
-                  <div style="margin-top:580px" class="col-md-12 mb-4 white-text text-center text-md-left">
+                  <div style="margin-top:80vh; margin-bottom: 20vh" class="col-md-12 mb-4 white-text text-center text-md-left">
                      <div class="row">
                         <div class="col-lg-4">
                            <!-- Card -->
                            <div style="margin-top: 10px; margin-bottom: 10px" class="card">
-                              <div style="background-color: darkgrey;" class="card-body">
+                              <div style="background-color: #424e66;" class=" radius card-body">
                                  <!-- Title -->
-                                 <h4 class="card-title"><a>Courses</a></h4>
+                                 <h4 class="card-title"><a href="about/?type=academics" style="color:white">Academics</a></h4>
                                  <!-- Text -->
-                                 <p class="card-text"></p>
+                                  <a href="about/?type=academics">
+                                 <p  style="color:white" class="card-text">Holistic development of students making them Industry 4.0 ready with various technologies and soft skills.</p>
+                               </a>
                                  <!-- Button -->
                               </div>
                            </div>
@@ -161,22 +166,30 @@
                         </div>
                         <div style="margin-top: 10px; margin-bottom: 10px" class="col-lg-4">
                           <div class="card">
-                              <div style="background-color: darkgrey;" class="card-body">
+                              <div style="background-color: #424e66;" class="card-body">
                                  <!-- Title -->
-                                 <h4 class="card-title"><a>Internships</a></h4>
+                                 <h4 class="card-title"><a href="about/?type=internship" style="color:white">Internships</a></h4>
                                  <!-- Text -->
-                                 <p class="card-text"></p>
+                                  <a href="about/?type=internship">
+                                 <p style="color: white" class="card-text">International/National internship being facilated with latest industry trend along with predictive blend of NEXTGEN TECHNOLOGIES.</p>
+                               </a>
                                  <!-- Button -->
                               </div>
                            </div>
                         </div>
+                        
                         <div style="margin-top: 10px; margin-bottom: 10px" class="col-lg-4">
+                          
                           <div class="card">
-                              <div style="background-color:darkgrey;" class="card-body">
+                              <div style="background-color:#424e66;" class="card-body">
                                  <!-- Title -->
-                                 <h4 class="card-title"><a>Corporates</a></h4>
+                                 
+                                 <h4 style="color: white!important" class="card-title"><a style="color:white" href="about/?type=corporate">Corporate</a></h4>
                                  <!-- Text -->
-                                 <p class="card-text"></p>
+                                 <a href="about/?type=corporate">
+                                 <p style="color: white" class="card-text">
+To enhance the requisite competancy of technology in short span of time with a definite outcome.</p>
+                                </a>
                                  <!-- Button -->
                               </div>
                            </div>
