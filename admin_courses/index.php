@@ -1,6 +1,5 @@
 <?php session_start(); ?>
 <?php include '../inc/dbconnection.php';
-include '../inc/redirection.php';
 
 function manipulate_title($str){
   $count = strlen($str);
@@ -13,14 +12,9 @@ function manipulate_title($str){
 
 }
 
-// include '../inc/adminlogincheck.php';
-
-// if(isset($_SESSION['admin_username'])==false){
-//   redirect('https://katallyst.com/admin/');
-// }
-
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
