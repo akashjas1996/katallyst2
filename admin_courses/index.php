@@ -12,7 +12,7 @@ function manipulate_title($str){
 
 }
   if(!isset($_SESSION['admin_username'])){
-    redirect('../admin/')
+    redirect('../admin/');
   }
 ?>
 
