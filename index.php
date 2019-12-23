@@ -171,7 +171,7 @@
                                  <h4 class="card-title"><a href="about/?type=internship" style="color:white">Internships</a></h4>
                                  <!-- Text -->
                                   <a href="about/?type=internship">
-                                 <p style="color: white" class="card-text">International/National internship being facilated with latest industry trend along with predictive blend of NEXTGEN TECHNOLOGIES.</p>
+                                 <p style="color: white" class="card-text">International/National internship being facilitated with latest industry trend along with predictive blend of NEXTGEN TECHNOLOGIES.</p>
                                </a>
                                  <!-- Button -->
                               </div>
@@ -188,7 +188,7 @@
                                  <!-- Text -->
                                  <a href="about/?type=corporate">
                                  <p style="color: white" class="card-text">
-To enhance the requisite competancy of technology in short span of time with a definite outcome.</p>
+To enhance the requisite competency of technology in short span of time with a definite outcome.</p>
                                 </a>
                                  <!-- Button -->
                               </div>

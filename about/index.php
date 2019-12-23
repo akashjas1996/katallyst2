@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php include '../inc/dbconnection.php';
+      include '../inc/redirection.php';
 
 function manipulate_title($str){
   $count = strlen($str);
@@ -7,15 +8,11 @@ function manipulate_title($str){
     $str = substr($str, 0, 21);
     $str=$str.'...';
   }
-
   return($str);
-
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,10 +44,39 @@ function manipulate_title($str){
     <?php 
     if(isset($_GET['type'])){
       $type = $_GET['type'];
-
-      echo $type;
     }
+      if($type=='academics'){
+        $type = "Academics";
+      }
+      else if($type=='internship'){
+        $type='Internship';
+      }
+      else if($type=='corporate'){
+        $type='Corporate';
+      }
+      else{
+        redirect('../');
+      }
+
+      $query = "SELECT * FROM verticals WHERE name='$type'";
+      $res = mysqli_query($link, $query);
+      $row = mysqli_fetch_assoc($res);
     ?>
+
+    <div class="container py-5 my-5 z-depth-1">
+  <section class="p-md-3 mx-md-5 text-lg-left">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="font-weight-bold mb-3"><?php echo $row['name']; ?></h2>
+        <p class="lead py-3">
+          <?php echo $row['details']; ?>
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
     <?php include '../inc/footer.php' ?>
   </main>
 
