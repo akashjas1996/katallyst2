@@ -15,9 +15,9 @@ function manipulate_title($str){
 
 // include '../inc/adminlogincheck.php';
 
-if(isset($_SESSION['admin_username'])==false){
-  redirect('https://katallyst.com/admin/');
-}
+// if(isset($_SESSION['admin_username'])==false){
+//   redirect('https://katallyst.com/admin/');
+// }
 
 
 ?>
