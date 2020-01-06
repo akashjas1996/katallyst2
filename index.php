@@ -24,6 +24,19 @@
       <link href="css2/style.min.css" rel="stylesheet">
       <link rel="icon" href="img/favicon.png">
       <style type="text/css">
+
+
+
+    @media only screen and (max-width: 900px) {
+  .only_for_mobile {
+    display: block !important;
+  }
+  .only_for_desktop{
+    display:none !important;
+  }
+}
+
+
          html,
          body,
          header,
@@ -145,55 +158,47 @@
             <!-- Content -->
             <div style="" class="container ">
                <!--Grid row-->
-               <div class="row wow fadeIn">
+               <div class="row wow">
                   <!--Grid column-->
-                  <div style="margin-top:80vh; margin-bottom: 20vh" class="col-md-12 mb-4 white-text text-center text-md-left">
-                     <div class="row">
-                        <div class="col-lg-4">
+                  <div style="margin-top:70vh; margin-bottom: 20vh" class="col-md-12 mb-4 white-text text-center text-md-left">
+                     <div class="row only_for_desktop">
+                      <?php
+                      $count=1;
+                      $q_course = "SELECT * FROM course_learning_details WHERE sp=1";
+                      $res_course = mysqli_query($link, $q_course);
+                      while($row_course=mysqli_fetch_assoc($res_course)){
+                      ?>
+                        <div style="max-height: auto" class="col-lg-3 col-md-3 col-3">
+<div class="card">
+
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="courses/<?php echo $row_course['course_image'] ?>" alt="Card image cap">
+    <a href="#!">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div  class="card-body">
+
+    <!-- Title -->
+    <h6 style="color: black" class="card-title"><?php echo $row_course['course_name'] ?></h6>
+    <!-- Text -->
+    
+    <!-- Button -->
+    <!-- <a href="#" class="btn btn-primary">Button</a> -->
+
+  </div>
+
+</div>
+<!-- Card -->
                            <!-- Card -->
-                           <div style="margin-top: 10px; margin-bottom: 10px" class="card">
-                              <div style="background-color: #424e66;" class=" radius card-body">
-                                 <!-- Title -->
-                                 <h4 class="card-title"><a href="about/?type=academics" style="color:white">Academics</a></h4>
-                                 <!-- Text -->
-                                  <a href="about/?type=academics">
-                                 <p  style="color:white" class="card-text">Holistic development of students making them Industry 4.0 ready with various technologies and soft skills.</p>
-                               </a>
-                                 <!-- Button -->
-                              </div>
-                           </div>
-                           <!-- Card -->
                         </div>
-                        <div style="margin-top: 10px; margin-bottom: 10px" class="col-lg-4">
-                          <div class="card">
-                              <div style="background-color: #424e66;" class="card-body">
-                                 <!-- Title -->
-                                 <h4 class="card-title"><a href="about/?type=internship" style="color:white">Internships</a></h4>
-                                 <!-- Text -->
-                                  <a href="about/?type=internship">
-                                 <p style="color: white" class="card-text">International/National internship being facilitated with latest industry trend along with predictive blend of NEXTGEN TECHNOLOGIES.</p>
-                               </a>
-                                 <!-- Button -->
-                              </div>
-                           </div>
-                        </div>
-                        
-                        <div style="margin-top: 10px; margin-bottom: 10px" class="col-lg-4">
-                          
-                          <div class="card">
-                              <div style="background-color:#424e66;" class="card-body">
-                                 <!-- Title -->
-                                 
-                                 <h4 style="color: white!important" class="card-title"><a style="color:white" href="about/?type=corporate">Corporate</a></h4>
-                                 <!-- Text -->
-                                 <a href="about/?type=corporate">
-                                 <p style="color: white" class="card-text">
-To enhance the requisite competency of technology in short span of time with a definite outcome.</p>
-                                </a>
-                                 <!-- Button -->
-                              </div>
-                           </div>
-                        </div>
+
+                        <?php
+                      }
+                        ?>
                      </div>
                   </div>
                   <!--Grid column-->
@@ -257,41 +262,156 @@ To enhance the requisite competency of technology in short span of time with a d
       <!--Main layout-->
       <main>
          <div class="container">
-            <!--Section: Main info-->
-            <!--section class="mt-5 wow fadeIn">
-               <div class="row">
-               
-               
-                 <div class="col-md-6 mb-4">
-               
-                   <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8n0vuIYZjuQ" allowfullscreen></iframe> >
-                   </div>
-               
-                 </div>
-               
-               
-               
-                 <div class="col-md-6 mb-4">
-               
-               
-                   <h3 class="h3 mb-3">About Katallyst</h3>
-                    An Industry 4.0 Competency Development Forum & Learning Hub equipped with current Industry Trend along with predictive blend Of Nextgen Technologies, having a cogent & compelling collaboration with leading Academia & Industries , is all Set To nourish, nurture & empower the learners to become Industry 4.0 ready.
-               
-                   <hr>
-               
-                   <p>
-                    Katallyst takes care of a student's holistic development starting from Placement Training (from aptitude training, honing reasoning skills and tuning up their soft skills to tech skills in lining up to the Industry 4.0) with a team of dedicated faculties , management trainees, executives who are the best in the industry for guiding the students.
-                   </p>
-               
-                 </div>
-               
-               
-               </div>
-               
-               
-               </section-->
             <hr class="my-5">
+            <div style="display: none" class="container only_for_mobile">
+              <div class="row">
+                  <div  class="col-md-12 mb-4 white-text text-center text-md-left">
+                     <div class="row">
+                      <?php
+                      $count=1;
+                      $q_course = "SELECT * FROM course_learning_details WHERE sp=1";
+                      $res_course = mysqli_query($link, $q_course);
+                      while($row_course=mysqli_fetch_assoc($res_course)){
+                      ?>
+                        <div style="max-height: auto; margin-bottom: 20px" class="col-lg-3 col-md-12 col-12">
+<div class="card">
+  <!-- Card image -->
+  <div class=" overlay">
+    <img class="card-img-top" src="courses/<?php echo $row_course['course_image'] ?>" alt="Card image cap">
+    <a href="#!">
+      <!-- <div class="mask rgba-white-slight"></div> -->
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div  class="card-body">
+
+    <!-- Title -->
+    <h6 style="color: black" class="card-title"><?php echo $row_course['course_name'] ?></h6>
+    <!-- Text -->
+    
+    <!-- Button -->
+    <!-- <a href="#" class="btn btn-primary">Button</a> -->
+
+  </div>
+
+</div>
+<!-- Card -->
+                           <!-- Card -->
+                        </div>
+
+                        <?php
+                      }
+                        ?>
+                     </div>
+                  </div>
+                  <!--Grid column-->
+                  <!--Grid column-->
+                  <!--div class="col-md-6 col-xl-5 mb-4">
+                     <div class="card">
+                     
+                     
+                       <div class="card-body">
+                     
+                     
+                         <form name="">
+                     
+                           <h3 class="dark-grey-text text-center">
+                             <strong>Write to us:</strong>
+                           </h3>
+                           <hr>
+                     
+                           <div class="md-form">
+                             <i class="fas fa-user prefix grey-text"></i>
+                             <input type="text" id="form3" class="form-control">
+                             <label for="form3">Your name</label>
+                           </div>
+                           <div class="md-form">
+                             <i class="fas fa-envelope prefix grey-text"></i>
+                             <input type="text" id="form2" class="form-control">
+                             <label for="form2">Your email</label>
+                           </div>
+                     
+                           <div class="md-form">
+                             <i class="fas fa-pencil-alt prefix grey-text"></i>
+                             <textarea type="text" id="form8" class="md-textarea"></textarea>
+                             <label for="form8">Your message</label>
+                           </div>
+                     
+                           <div class="text-center">
+                             <button class="btn btn-indigo">Send</button>
+                             <hr>
+                             <fieldset class="form-check">
+                               <input type="checkbox" class="form-check-input" id="checkbox1">
+                               <label for="checkbox1" class="form-check-label dark-grey-text">Subscribe me to the newsletter</label>
+                             </fieldset>
+                           </div>
+                     
+                         </form>
+                     
+                     
+                       </div>
+                     
+                     </div>
+                     
+                     
+                     </div-->
+               </div>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4">
+                   <div class="card">
+                   <div style="background-color: #424e66;" class=" radius card-body br">
+                                 <!-- Title -->
+                                 <h4 class="card-title"><a href="about/?type=academics" style="color:white">Academics</a></h4>
+                                 <!-- Text -->
+                                  <a href="about/?type=academics">
+                                 <p  style="color:white" class="card-text">Holistic development of students making them Industry 4.0 ready with various technologies and soft skills.</p>
+                               </a>
+                                 <!-- Button -->
+                              </div>
+                            </div>
+                </div>
+
+                <div class="col-lg-4">
+
+                   <div class="card">
+                    <div style="background-color: #424e66;" class="card-body">
+                                 <!-- Title -->
+                                 <h4 class="card-title"><a href="about/?type=internship" style="color:white">Internships</a></h4>
+                                 <!-- Text -->
+                                  <a href="about/?type=internship">
+                                 <p style="color: white" class="card-text">International/National internship being facilitated with latest industry trend along with predictive blend of NEXTGEN TECHNOLOGIES.</p>
+                               </a>
+                                 <!-- Button -->
+                              </div>
+                            </div>
+
+                </div>
+
+                <div class="col-lg-4">
+                   <div class="card">
+                   <div style="background-color:#424e66;" class="card-body">
+                                 <!-- Title -->
+                                 
+                                 <h4 style="color: white!important" class="card-title"><a style="color:white" href="about/?type=corporate">Corporate</a></h4>
+                                 <!-- Text -->
+                                 <a href="about/?type=corporate">
+                                 <p style="color: white" class="card-text">
+To enhance the requisite competency of technology in short span of time with a definite outcome.</p>
+                                </a>
+                                 <!-- Button -->
+                              </div>
+                            </div>
+
+
+                </div>
+              </div>
+
+
+            </div>
             <section>
                <h3 class="h3 text-center my-5 mb-2">CHOOSE THE BEST</h3>
                <!--Grid row-->
