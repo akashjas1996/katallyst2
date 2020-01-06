@@ -174,7 +174,7 @@
   <!-- Card image -->
   <div class="view overlay">
     <img class="card-img-top" src="courses/<?php echo $row_course['course_image'] ?>" alt="Card image cap">
-    <a href="/info/crs=<?php echo $row_course['course_id'] ?>">
+    <a href="/info/?crs=<?php echo $row_course['course_id'] ?>">
       <div class="mask rgba-white-slight"></div>
     </a>
   </div>
@@ -278,7 +278,7 @@
   <!-- Card image -->
   <div class=" overlay">
     <img class="card-img-top" src="courses/<?php echo $row_course['course_image'] ?>" alt="Card image cap">
-    <a href="/info/crs=<?php echo $row_course['course_id'] ?>">
+    <a href="/info/?crs=<?php echo $row_course['course_id'] ?>">
       <!-- <div class="mask rgba-white-slight"></div> -->
     </a>
   </div>
