@@ -685,6 +685,20 @@ To enhance the requisite competency of technology in short span of time with a d
             </div-->
          <!-- Social icons -->
          <!--Copyright-->
+
+         <div class="footer-copyright py-3">
+         <b> <a href="policy/pns.php"> <p style="display: inline;"> Products & Services </p> </a>&nbsp;&nbsp;
+            <a href="policy/contact.php"> <p style="display: inline;"> Contact Us </p> </a> &nbsp;&nbsp;
+
+            <a href="policy/tnc.php"> <p style="display: inline;"> Terms & Conditions </p> </a>&nbsp;&nbsp;
+
+            <a href="policy/privacy.php"> <p style="display: inline;"> Privacy Policy </p> </a>&nbsp;&nbsp;
+
+            <a href="policy/refund.php"> <p style="display: inline;"> Refund/Cancellation Policy </p> </a>
+          </b>
+         </div>
+
+
          <div class="footer-copyright py-3">
             © 2019 Copyright:
             <a href="https://katallyst.com"> Katallyst.com </a>
