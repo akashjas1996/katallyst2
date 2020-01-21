@@ -160,7 +160,7 @@
                <!--Grid row-->
                <div class="row wow">
                   <!--Grid column-->
-                  <div style="margin-top:70vh; margin-bottom: 20vh" class="col-md-12 mb-4 white-text text-center text-md-left">
+                  <div style="background-color: #ffef00; margin-top:70vh; margin-bottom: 20vh" class="col-md-12 mb-4 white-text text-center text-md-left">
                      <div class="row only_for_desktop">
                       <?php
                       $count=1;
