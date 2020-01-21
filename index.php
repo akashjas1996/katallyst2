@@ -168,7 +168,7 @@
                       $res_course = mysqli_query($link, $q_course);
                       while($row_course=mysqli_fetch_assoc($res_course)){
                       ?>
-                        <div style="max-height: auto" class="col-lg-3 col-md-3 col-3">
+                        <div style="background-color: #ffef00; max-height: auto" class="col-lg-3 col-md-3 col-3">
 <div class="card">
 
   <!-- Card image -->
