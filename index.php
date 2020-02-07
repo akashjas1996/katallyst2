@@ -1,4 +1,28 @@
-<?php include 'inc/dbconnection.php';
+<?php
+
+
+function redirect($url)
+{
+    if (!headers_sent())
+    {    
+        header('Location: '.$url);
+        exit;
+        }
+    else
+        {  
+        echo '<script type="text/javascript">';
+        echo 'window.location.href="'.$url.'";';
+        echo '</script>';
+        echo '<noscript>';
+        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
+        echo '</noscript>'; exit;
+    }
+}
+
+redirect('home/');
+
+
+include 'inc/dbconnection.php';
    // session_start();
    function manipulate($str){
      $str = substr($str, 0,80);
