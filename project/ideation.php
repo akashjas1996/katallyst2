@@ -120,17 +120,17 @@
       <!-- Email -->
       <div class="md-form">
         <h3 align="left" >Academics</h3>
-        <textarea name="academics" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control"><?php echo "$row_read1['details']" ?></textarea>
+        <textarea name="academics" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control">DETAILS 1</textarea>
       </div>
 
        <div class="md-form">
         <h3 align="left" >Internship</h3>
-        <textarea name="internship" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control"><?php echo "$row_read2['details']" ?></textarea>
+        <textarea name="internship" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control">DETAILS 2</textarea>
       </div>
 
        <div class="md-form">
         <h3 align="left" >Corporates</h3>
-        <textarea name="corporate" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control"><?php echo "$row_read3['details']" ?></textarea>
+        <textarea name="corporate" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control">DETAILS 3</textarea>
       </div>
 
       <button class="btn btn-outline-danger btn-rounded btn-block my-4 waves-effect z-depth-0" name="vertical_update" type="submit">Save</button>
