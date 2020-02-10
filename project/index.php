@@ -31,11 +31,13 @@
 
 
    if(!isset($_SESSION['userid'])){
-    redirect('https://katallyst.com/admin/');
+    redirect('https://katallyst.com/login/');
    }
    
    
    include '../inc/redirection.php';
+
+
 
    if(isset($_POST['vertical_update'])){
     $aca =  $_POST['academics'];
