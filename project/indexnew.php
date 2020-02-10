@@ -12,10 +12,12 @@
    }
 
 
-   if(!isset($_SESSION['admin_username'])){
+   if(!isset($_SESSION['userid'])){
     redirect('https://katallyst.com/login/');
    }
-   
+   else{
+    $usereid = $_SESSION['userid'];
+   }
    
    include '../inc/redirection.php';
 
@@ -40,15 +42,18 @@
    }
     
 
-  $query_read1 = "SELECT * FROM project_aid WHERE userid='Academics'";
+  $query_read1 = "SELECT * FROM project_aid WHERE userid='$userid'";
   $res_read1 = mysqli_query($link, $query_read1);
   $row_read1 = mysqli_fetch_assoc($res_read1);
-  $query_read2 = "SELECT * FROM verticals WHERE name='Internship'";
-  $res_read2 = mysqli_query($link, $query_read2);
-  $row_read2 = mysqli_fetch_assoc($res_read2);
-  $query_read3 = "SELECT * FROM verticals WHERE name='Corporate'";
-  $res_read3 = mysqli_query($link, $query_read3);
-  $row_read3 = mysqli_fetch_assoc($res_read3);
+
+
+
+  // $query_read2 = "SELECT * FROM verticals WHERE name='Internship'";
+  // $res_read2 = mysqli_query($link, $query_read2);
+  // $row_read2 = mysqli_fetch_assoc($res_read2);
+  // $query_read3 = "SELECT * FROM verticals WHERE name='Corporate'";
+  // $res_read3 = mysqli_query($link, $query_read3);
+  // $row_read3 = mysqli_fetch_assoc($res_read3);
 
 
    ?>
@@ -119,12 +124,12 @@
       <!-- Email -->
       <div class="md-form">
         <h3 align="left" >PROJECT TITLE</h3>
-        <textarea name="academics" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control"><?php echo $row_read1['details'] ?></textarea>
+        <textarea name="academics" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control"><?php echo $row_read1['project_name'] ?></textarea>
       </div>
 
        <div class="md-form">
         <h3 align="left" >Short Description</h3>
-        <textarea name="internship" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control"><?php echo $row_read2['details'] ?></textarea>
+        <textarea name="internship" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control"><?php echo $row_read2['project_desc'] ?></textarea>
       </div>
 
       <div class="md-form">
