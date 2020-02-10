@@ -11,23 +11,30 @@
    }
 
 
+
+
    if(!isset($_SESSION['userid'])){
     redirect('https://katallyst.com/login/');
    }
 
    $std_id = $_SESSION['userid'];
-   
+   $project_id = $_GET['pid'];
    
    include '../inc/redirection.php';
 
-   if(isset($_POST['vertical_update'])){
-    $aca =  $_POST['academics'];
-    $intn =  $_POST['internship'];
-    $corp =  $_POST['corporate'];
+   if(isset($_POST['add_project'])){
+    $name =  $_POST['title'];
+    $short_desc =  $_POST['short_desc'];
+    $inspiration =  $_POST['inspiration'];
+    $desc =  $_POST['desc'];
 
-    $sql_upd1 = "UPDATE verticals SET details='$aca' WHERE name='Academics'";
-    $sql_upd2 = "UPDATE verticals SET details='$intn' WHERE name='Internship'";
-    $sql_upd3 = "UPDATE verticals SET details='$corp' WHERE name='Corporate'";
+    $query_write = "INSERT INTO project_aid(`project_name`,`project_desc`,`requirement`) VALUES('$name','$short_desc','$inspiration','$desc')";
+    $res_write = mysqli_query($link, $query);
+    // $sql_upd1 = "UPDATE verticals SET details='$aca' WHERE name='Academics'";
+    // $sql_upd2 = "UPDATE verticals SET details='$intn' WHERE name='Internship'";
+    // $sql_upd3 = "UPDATE verticals SET details='$corp' WHERE name='Corporate'";
+
+
 
     // echo $sql_upd1;
     // echo '<br>';
@@ -115,25 +122,25 @@
       <!-- Email -->
       <div class="md-form">
         <h3 align="left" >Title</h3>
-        <textarea name="academics" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control"><?php echo $row_read['project_name'] ?></textarea>
+        <textarea name="title" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control"><?php echo $row_read['project_name'] ?></textarea>
       </div>
 
        <div class="md-form">
         <h3 align="left" >Short Description</h3>
-        <textarea name="internship" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control">DETAILS 2</textarea>
+        <textarea name="short_desc" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control">DETAILS 2</textarea>
       </div>
 
        <div class="md-form">
         <h3 align="left" >Inspiration</h3>
-        <textarea name="corporate" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control">DETAILS 3</textarea>
+        <textarea name="inspiration" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control">DETAILS 3</textarea>
       </div>
 
        <div class="md-form">
         <h3 align="left" >Complete Description</h3>
-        <textarea name="corporate" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control">DETAILS 4</textarea>
+        <textarea name="desc" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control">DETAILS 4</textarea>
       </div>
 
-      <button class="btn btn-outline-danger btn-rounded btn-block my-4 waves-effect z-depth-0" name="vertical_update" type="submit">Save</button>
+      <button class="btn btn-outline-danger btn-rounded btn-block my-4 waves-effect z-depth-0" name="add_project" type="submit">Save</button>
 
     </form>
     <br> <br> <br> <br>
