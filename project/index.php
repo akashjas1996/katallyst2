@@ -64,7 +64,7 @@
             </div>
 
              <div style="margin-left:20vw; margin-top:10%" class="row">
-              <h2 style="color:gray"> No completed course </h2>
+              <h2 style="color:gray"> No Pending Projects </h2>
             </div>
             <!--Grid column-->
           </div>
