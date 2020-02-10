@@ -18,7 +18,12 @@
    }
 
    $std_id = $_SESSION['userid'];
-   $project_id = $_GET['pid'];
+   if(isset($_GET['pid'])){
+    $pid = $GET['pid'];
+      $query_read = "SELECT * FROM project_aid WHERE project_id='$pid'";
+  $res_read = mysqli_query($link, $query_read);
+  $row_read = mysqli_fetch_assoc($res_read);
+   }
    
    include '../inc/redirection.php';
 
@@ -28,8 +33,10 @@
     $inspiration =  $_POST['inspiration'];
     $desc =  $_POST['desc'];
 
-    $query_write = "INSERT INTO project_aid(`project_name`,`project_desc`,`requirement`) VALUES('$name','$short_desc','$inspiration','$desc')";
-    $res_write = mysqli_query($link, $query);
+    $query_write = "INSERT INTO project_aid(`project_title`,`project_desc`,`requirement`, `full_desc`, `userid`) VALUES('$name','$short_desc','$inspiration','$desc', '$std_id')";
+    // echo $query_write;
+    $res_write = mysqli_query($link, $query_write);
+    echo mysqli_error($link);
     // $sql_upd1 = "UPDATE verticals SET details='$aca' WHERE name='Academics'";
     // $sql_upd2 = "UPDATE verticals SET details='$intn' WHERE name='Internship'";
     // $sql_upd3 = "UPDATE verticals SET details='$corp' WHERE name='Corporate'";
@@ -42,15 +49,9 @@
     // echo '<br>';
     // echo $sql_upd3;
 
-    $res_upd1 = mysqli_query($link, $sql_upd1);
-    $res_upd2 = mysqli_query($link, $sql_upd2);
-    $res_upd3 = mysqli_query($link, $sql_upd3);
    }
     
 
-  $query_read = "SELECT * FROM project_aid WHERE project_id='$project_id'";
-  $res_read = mysqli_query($link, $query_read);
-  $row_read = mysqli_fetch_assoc($res_read);
 
 
 
@@ -122,22 +123,46 @@
       <!-- Email -->
       <div class="md-form">
         <h3 align="left" >Title</h3>
-        <textarea name="title" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control"><?php echo $row_read['project_name'] ?></textarea>
+        <textarea name="title" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control"><?php 
+        if(isset($_GET['pid'])){
+        echo $row_read['project_name'];
+      }
+        ?></textarea>
       </div>
 
        <div class="md-form">
         <h3 align="left" >Short Description</h3>
-        <textarea name="short_desc" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control">DETAILS 2</textarea>
+        <textarea name="short_desc" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control">
+
+          <?php 
+        if(isset($_GET['pid'])){
+        echo $row_read['project_name'];
+      }
+        ?>
+          
+        </textarea>
       </div>
 
        <div class="md-form">
         <h3 align="left" >Inspiration</h3>
-        <textarea name="inspiration" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control">DETAILS 3</textarea>
+        <textarea name="inspiration" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control">
+          <?php 
+        if(isset($_GET['pid'])){
+        echo $row_read['project_name'];
+      }
+        ?>
+        </textarea>
       </div>
 
        <div class="md-form">
         <h3 align="left" >Complete Description</h3>
-        <textarea name="desc" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control">DETAILS 4</textarea>
+        <textarea name="desc" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control"><?php 
+        if(isset($_GET['pid'])){
+        echo $row_read['project_name'];
+      }
+        ?>
+          
+        </textarea>
       </div>
 
       <button class="btn btn-outline-danger btn-rounded btn-block my-4 waves-effect z-depth-0" name="add_project" type="submit">Save</button>
