@@ -41,15 +41,11 @@
    }
     
 
-  // $query_read1 = "SELECT * FROM verticals WHERE name='Academics'";
+  $query_read1 = "SELECT * FROM project_aid WHERE userid='$std_id'";
+  echo $query_read1;
   // $res_read1 = mysqli_query($link, $query_read1);
   // $row_read1 = mysqli_fetch_assoc($res_read1);
-  // $query_read2 = "SELECT * FROM verticals WHERE name='Internship'";
-  // $res_read2 = mysqli_query($link, $query_read2);
-  // $row_read2 = mysqli_fetch_assoc($res_read2);
-  // $query_read3 = "SELECT * FROM verticals WHERE name='Corporate'";
-  // $res_read3 = mysqli_query($link, $query_read3);
-  // $row_read3 = mysqli_fetch_assoc($res_read3);
+
 
 
    ?>
@@ -108,7 +104,7 @@
 <div class="card">
 
   <h5 class="card-header danger-color accent-3 white-text text-center py-4">
-    <strong>About Verticals</strong>
+    <strong>Project Ideation</strong>
   </h5>
 
   <!--Card content-->
@@ -119,18 +115,23 @@
 
       <!-- Email -->
       <div class="md-form">
-        <h3 align="left" >Academics</h3>
+        <h3 align="left" >Title</h3>
         <textarea name="academics" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control">DETAILS 1</textarea>
       </div>
 
        <div class="md-form">
-        <h3 align="left" >Internship</h3>
+        <h3 align="left" >Short Description</h3>
         <textarea name="internship" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control">DETAILS 2</textarea>
       </div>
 
        <div class="md-form">
-        <h3 align="left" >Corporates</h3>
+        <h3 align="left" >Inspiration</h3>
         <textarea name="corporate" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control">DETAILS 3</textarea>
+      </div>
+
+       <div class="md-form">
+        <h3 align="left" >Complete Description</h3>
+        <textarea name="corporate" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control">DETAILS 4</textarea>
       </div>
 
       <button class="btn btn-outline-danger btn-rounded btn-block my-4 waves-effect z-depth-0" name="vertical_update" type="submit">Save</button>
