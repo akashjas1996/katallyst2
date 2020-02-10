@@ -41,10 +41,9 @@
    }
     
 
-  $query_read1 = "SELECT * FROM project_aid WHERE userid='$std_id'";
-  echo $query_read1;
-  // $res_read1 = mysqli_query($link, $query_read1);
-  // $row_read1 = mysqli_fetch_assoc($res_read1);
+  $query_read = "SELECT * FROM project_aid WHERE project_id='$project_id'";
+  $res_read = mysqli_query($link, $query_read);
+  $row_read = mysqli_fetch_assoc($res_read);
 
 
 
@@ -55,7 +54,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>ADMIN | Katallyst</title>
+      <title>Project AID | Katallyst</title>
       <!-- Font Awesome -->
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
       <!-- Bootstrap core CSS -->
@@ -116,7 +115,7 @@
       <!-- Email -->
       <div class="md-form">
         <h3 align="left" >Title</h3>
-        <textarea name="academics" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control">DETAILS 1</textarea>
+        <textarea name="academics" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control"><?php echo $row_read['project_name'] ?></textarea>
       </div>
 
        <div class="md-form">
