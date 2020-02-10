@@ -12,9 +12,9 @@
    }
 
 
-   // if(!isset($_SESSION['admin_username'])){
-   //  redirect('https://katallyst.com/admin/');
-   // }
+   if(!isset($_SESSION['admin_username'])){
+    redirect('https://katallyst.com/login/');
+   }
    
    
    include '../inc/redirection.php';
@@ -40,7 +40,7 @@
    }
     
 
-  $query_read1 = "SELECT * FROM verticals WHERE name='Academics'";
+  $query_read1 = "SELECT * FROM project_aid WHERE userid='Academics'";
   $res_read1 = mysqli_query($link, $query_read1);
   $row_read1 = mysqli_fetch_assoc($res_read1);
   $query_read2 = "SELECT * FROM verticals WHERE name='Internship'";
@@ -118,17 +118,24 @@
 
       <!-- Email -->
       <div class="md-form">
-        <h3 align="left" >Academics</h3>
+        <h3 align="left" >PROJECT TITLE</h3>
         <textarea name="academics" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control"><?php echo $row_read1['details'] ?></textarea>
       </div>
 
        <div class="md-form">
-        <h3 align="left" >Internship</h3>
+        <h3 align="left" >Short Description</h3>
         <textarea name="internship" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control"><?php echo $row_read2['details'] ?></textarea>
       </div>
 
+      <div class="md-form">
+        <h3 align="left" >Complete Functionality</h3>
+        <textarea name="internship" rows="auto" placeholder="Internship" id="materialLoginFormEmail" class="form-control"><?php echo $row_read2['details'] ?></textarea>
+      </div>
+
+
+
        <div class="md-form">
-        <h3 align="left" >Corporates</h3>
+        <h3 align="left" >Inspiration</h3>
         <textarea name="corporate" rows="auto" placeholder="Corporates" id="materialLoginFormEmail" class="form-control"><?php echo $row_read3['details'] ?></textarea>
       </div>
 
