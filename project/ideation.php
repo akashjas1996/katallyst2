@@ -68,7 +68,7 @@
    <body style="background-color: #fff0f0">
       <!-- Start your project here-->
       <!--Main Navigation-->
-      <?php include '../inc/admin_header.php' ?>
+      <?php include '../inc/header.php' ?>
       <header>
       </header>
       <br><br>
