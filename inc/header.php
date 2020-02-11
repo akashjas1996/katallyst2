@@ -61,7 +61,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../project/ideation.php/">Project Ideation</a>
+            <a class="nav-link" href="../project/ideation.php">Project Ideation</a>
           </li>
 
       <?php } 

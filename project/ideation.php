@@ -123,7 +123,7 @@
       <!-- Email -->
       <div class="md-form">
         <h3 align="left" >Title</h3>
-        <textarea name="title" rows="auto" placeholder="Academics" id="materialLoginFormEmail" class="form-control"><?php 
+        <textarea name="title" rows="auto" placeholder="PROJECT TITLE" id="materialLoginFormEmail" class="form-control"><?php 
         if(isset($_GET['pid'])){
         echo $row_read['project_name'];
       }
